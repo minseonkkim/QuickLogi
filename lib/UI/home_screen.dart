@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:get/get.dart';
 
 import '../constants.dart';
 
@@ -81,7 +82,9 @@ class HomeScreen extends StatelessWidget {
                   height: 15,
                 ),
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed('/RequestInfoSelectScreen');
+                    },
                     style: ElevatedButton.styleFrom(
                       primary: MAINCOLOR,
                       minimumSize: Size(double.infinity, 50),

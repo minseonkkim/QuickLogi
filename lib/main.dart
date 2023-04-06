@@ -23,6 +23,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/SplashScreen',
           page: () => SplashScreen(),
+        ),
+        GetPage(
+          name: '/RequestInfoSelectScreen',
+          page: () => RequestInfoSelectScreen(),
         )
       ],
     );
