@@ -6,9 +6,15 @@ import 'package:get/get.dart';
 import '../utilities/components.dart';
 import '../utilities/constants.dart';
 
-class RequestInfoSelectScreen extends StatelessWidget {
+class RequestInfoSelectScreen extends StatefulWidget {
   const RequestInfoSelectScreen({super.key});
 
+  @override
+  State<RequestInfoSelectScreen> createState() =>
+      _RequestInfoSelectScreenState();
+}
+
+class _RequestInfoSelectScreenState extends State<RequestInfoSelectScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +50,7 @@ class RequestInfoSelectScreen extends StatelessWidget {
               route: '/PlaceSelectScreen',
             ),
             SelectButton(
-              icon: Icons.calendar_month_rounded,
+              icon: Icons.date_range_rounded,
               text: '출고 예정일',
               selectedInfo: 'selectedDate',
               route: '/DateSelectScreen',
@@ -97,12 +103,14 @@ class SelectButton extends StatefulWidget {
 }
 
 class _SelectButtonState extends State<SelectButton> {
+  var value = null;
   @override
   Widget build(BuildContext context) {
     final String selectedInfo = widget.selectedInfo;
     return GestureDetector(
-      onTap: () {
-        Get.toNamed(widget.route);
+      onTap: () async {
+        value = await Get.toNamed(widget.route);
+        setState(() {});
       },
       child: Container(
         padding: EdgeInsets.fromLTRB(5, 12, 5, 12),
@@ -143,10 +151,10 @@ class _SelectButtonState extends State<SelectButton> {
                 ),
               ),
             ]),
-            selectedInfo != ''
+            value != null
                 ? Padding(
                     padding: const EdgeInsets.fromLTRB(12, 5, 12, 0),
-                    child: Text(selectedInfo),
+                    child: Text(value),
                   )
                 : SizedBox(),
           ],
