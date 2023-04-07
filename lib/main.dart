@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'UI/_module.dart';
+import 'package:quick_logi/screens/request_info_select/date_select_screen.dart';
+import 'package:quick_logi/screens/home_screen.dart';
+import 'package:quick_logi/screens/request_info_select/freight_select_screen.dart';
+import 'package:quick_logi/screens/request_info_select/place_select_screen.dart';
+import 'package:quick_logi/screens/request_info_select_screen.dart';
+import 'package:quick_logi/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +32,19 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/RequestInfoSelectScreen',
           page: () => RequestInfoSelectScreen(),
-        )
+        ),
+        GetPage(
+          name: '/PlaceSelectScreen',
+          page: () => PlaceSelectScreen(),
+        ),
+        GetPage(
+          name: '/DateSelectScreen',
+          page: () => DateSelectScreen(),
+        ),
+        GetPage(
+          name: '/FreightSelectScreen',
+          page: () => FreightSelectScreen(),
+        ),
       ],
     );
   }

@@ -5,7 +5,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 
-import '../constants.dart';
+import '../utilities/constants.dart';
 
 class HomeScreen extends StatelessWidget {
   int _selectedIndex = 0;

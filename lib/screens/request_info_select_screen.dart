@@ -3,7 +3,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 
-import '../constants.dart';
+import '../utilities/components.dart';
+import '../utilities/constants.dart';
 
 class RequestInfoSelectScreen extends StatelessWidget {
   const RequestInfoSelectScreen({super.key});
@@ -11,19 +12,7 @@ class RequestInfoSelectScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.0,
-        leading: IconButton(
-          onPressed: () {
-            Get.back();
-          },
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
-        ),
-      ),
+      appBar: BackTopBar(),
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -52,16 +41,19 @@ class RequestInfoSelectScreen extends StatelessWidget {
               icon: Icons.place_outlined,
               text: '출·도착지',
               selectedInfo: 'selectedPlace',
+              route: '/PlaceSelectScreen',
             ),
             SelectButton(
               icon: Icons.calendar_month_rounded,
               text: '출고 예정일',
               selectedInfo: 'selectedDate',
+              route: '/DateSelectScreen',
             ),
             SelectButton(
               icon: Icons.add_box,
               text: '화물 정보',
               selectedInfo: '',
+              route: '/FreightSelectScreen',
             ),
           ],
         ),
@@ -92,8 +84,13 @@ class SelectButton extends StatefulWidget {
   final IconData icon;
   final String text;
   final String selectedInfo;
+  final String route;
+
   SelectButton(
-      {required this.icon, required this.text, required this.selectedInfo});
+      {required this.icon,
+      required this.text,
+      required this.selectedInfo,
+      required this.route});
 
   @override
   State<SelectButton> createState() => _SelectButtonState();
@@ -104,7 +101,9 @@ class _SelectButtonState extends State<SelectButton> {
   Widget build(BuildContext context) {
     final String selectedInfo = widget.selectedInfo;
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Get.toNamed(widget.route);
+      },
       child: Container(
         padding: EdgeInsets.fromLTRB(5, 12, 5, 12),
         margin: EdgeInsets.symmetric(vertical: 8.0),
