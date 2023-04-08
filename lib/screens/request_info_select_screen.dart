@@ -122,43 +122,43 @@ class _SelectButtonState extends State<SelectButton> {
           ),
           borderRadius: BorderRadius.all(Radius.circular(10.0)),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(children: [
-              Expanded(
-                flex: 1,
-                child: Icon(
-                  widget.icon,
-                  size: 30,
-                ),
-              ),
-              Expanded(
-                flex: 5,
-                child: Text(
+        child: Row(children: [
+          Expanded(
+            flex: 1,
+            child: Icon(
+              widget.icon,
+              size: 30,
+            ),
+          ),
+          Expanded(
+            flex: 5,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
                   widget.text,
                   style: TextStyle(
                       fontFamily: 'PretendardBold',
                       color: Colors.black,
                       fontSize: 23),
                 ),
-              ),
-              Expanded(
-                flex: 1,
-                child: Icon(
-                  Icons.arrow_forward_ios_rounded,
-                  size: 20,
-                ),
-              ),
-            ]),
-            value != null
-                ? Padding(
-                    padding: const EdgeInsets.fromLTRB(12, 5, 12, 0),
-                    child: Text(value),
-                  )
-                : SizedBox(),
-          ],
-        ),
+                value != null
+                    ? Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 7, 0, 0),
+                        child: Text(value),
+                      )
+                    : SizedBox(),
+              ],
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Icon(
+              Icons.arrow_forward_ios_rounded,
+              size: 20,
+            ),
+          ),
+        ]),
       ),
     );
   }
