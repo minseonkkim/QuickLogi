@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quick_logi/screens/login_screen.dart';
 import 'package:quick_logi/screens/request_info_select/date_select_screen.dart';
 import 'package:quick_logi/screens/home_screen.dart';
 import 'package:quick_logi/screens/request_info_select/freight_select_screen.dart';
@@ -44,6 +45,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/FreightSelectScreen',
           page: () => FreightSelectScreen(),
+        ),
+        GetPage(
+          name: '/LoginScreen',
+          page: () => LoginScreen(),
         ),
       ],
     );

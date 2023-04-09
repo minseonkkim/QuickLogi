@@ -67,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                     style: TextStyle(
                         fontFamily: 'PretendardBold',
                         color: SUBCOLOR1,
-                        fontSize: 28),
+                        fontSize: 30),
                   ),
                 ])),
                 SizedBox(

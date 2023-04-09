@@ -81,7 +81,9 @@ class SplashScreen extends StatelessWidget {
                     ),
                   ),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed('/LoginScreen');
+                      },
                       child: Text(
                         '로그인하기',
                         style: TextStyle(
