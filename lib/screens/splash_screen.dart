@@ -65,9 +65,16 @@ class SplashScreen extends StatelessWidget {
               child: Column(
                 children: [
                   ElevatedButton(
+                      onPressed: () {
+                        Get.toNamed('/HomeScreen');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        primary: LIGHT, // Background color
+                      ),
+                      child: Text('홈 화면 보기(임시 버튼)')),
+                  ElevatedButton(
                     onPressed: () {
-                      // 임시로 홈 화면으로 넘어가게 해둠
-                      Get.toNamed('/HomeScreen');
+                      Get.toNamed('/JoinScreen');
                     },
                     style: ElevatedButton.styleFrom(
                       primary: SUBCOLOR2, // Background color
