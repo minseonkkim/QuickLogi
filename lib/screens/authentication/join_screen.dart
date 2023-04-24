@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:get/get.dart';
 import 'package:quick_logi/utilities/components.dart';
 import 'package:quick_logi/utilities/constants.dart';
 import 'package:quick_logi/utilities/validators.dart';
@@ -9,6 +11,10 @@ class JoinScreen extends StatelessWidget {
   FocusNode _nameFocus = new FocusNode();
   FocusNode _emailFocus = new FocusNode();
   FocusNode _passwordFocus = new FocusNode();
+
+  TextEditingController _nameControler = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -86,6 +92,7 @@ class JoinScreen extends StatelessWidget {
                     TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         focusNode: _emailFocus,
+                        controller: _emailController,
                         validator: (value) =>
                             CheckValidate().validateEmail(_emailFocus, value!),
                         decoration: InputDecoration(
@@ -111,6 +118,7 @@ class JoinScreen extends StatelessWidget {
                     TextFormField(
                         obscureText: true,
                         focusNode: _passwordFocus,
+                        controller: _passwordController,
                         validator: (value) => CheckValidate()
                             .validatePassword(_passwordFocus, value!),
                         toolbarOptions: ToolbarOptions(
@@ -127,8 +135,34 @@ class JoinScreen extends StatelessWidget {
                 )),
               )),
               ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   _formKey.currentState!.validate();
+
+                  try {
+                    UserCredential userCredential = await FirebaseAuth.instance
+                        .createUserWithEmailAndPassword(
+                            email: _emailController.text,
+                            password: _passwordController.text)
+                        .then((value) {
+                      if (value.user!.email == null) {
+                      } else {
+                        Get.toNamed('/EmailVerifyScreen');
+                      }
+                      return value;
+                    });
+                    FirebaseAuth.instance.currentUser?.sendEmailVerification();
+                  } on FirebaseAuthException catch (e) {
+                    if (e.code == 'weak-password') {
+                      print('the password provided is too weak');
+                    } else if (e.code == 'email-already-in-use') {
+                      Get.snackbar('이미 존재하는 이메일 주소입니다.', '');
+                      print('The account already exists for that email.');
+                    } else {
+                      print('11111');
+                    }
+                  } catch (e) {
+                    print('끝');
+                  }
                 },
                 style: ElevatedButton.styleFrom(
                   primary: MAINCOLOR,

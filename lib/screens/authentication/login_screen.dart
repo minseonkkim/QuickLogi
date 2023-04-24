@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -5,11 +6,14 @@ import 'package:get/get.dart';
 import 'package:quick_logi/utilities/constants.dart';
 import 'package:quick_logi/utilities/validators.dart';
 
-import '../utilities/components.dart';
+import '../../utilities/components.dart';
 
 class LoginScreen extends StatelessWidget {
   FocusNode _emailFocus = new FocusNode();
   FocusNode _passwordFocus = new FocusNode();
+
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -64,6 +68,7 @@ class LoginScreen extends StatelessWidget {
                         TextFormField(
                             keyboardType: TextInputType.emailAddress,
                             focusNode: _emailFocus,
+                            controller: _emailController,
                             validator: (value) => CheckValidate()
                                 .validateEmail(_emailFocus, value!),
                             decoration: InputDecoration(
@@ -89,6 +94,7 @@ class LoginScreen extends StatelessWidget {
                         TextFormField(
                             obscureText: true,
                             focusNode: _passwordFocus,
+                            controller: _passwordController,
                             validator: (value) => CheckValidate()
                                 .validatePassword(_passwordFocus, value!),
                             decoration: InputDecoration(
@@ -104,8 +110,32 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   _formKey.currentState!.validate();
+
+                  try {
+                    UserCredential userCredential = await FirebaseAuth.instance
+                        .signInWithEmailAndPassword(
+                            email: _emailController.text,
+                            password:
+                                _passwordController.text) //아이디와 비밀번호로 로그인 시도
+                        .then((value) {
+                      print(value);
+                      value.user!.emailVerified == true //이메일 인증 여부
+                          ? Get.offAllNamed('/HomeScreen')
+                          : print('이메일 확인 안댐');
+                      return value;
+                    });
+                  } on FirebaseAuthException catch (e) {
+                    //로그인 예외처리
+                    if (e.code == 'user-not-found') {
+                      print('등록되지 않은 이메일입니다');
+                    } else if (e.code == 'wrong-password') {
+                      print('비밀번호가 틀렸습니다');
+                    } else {
+                      print(e.code);
+                    }
+                  }
                 },
                 style: ElevatedButton.styleFrom(
                   primary: MAINCOLOR,

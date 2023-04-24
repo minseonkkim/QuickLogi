@@ -1,7 +1,9 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quick_logi/screens/join_screen.dart';
-import 'package:quick_logi/screens/login_screen.dart';
+import 'package:quick_logi/screens/authentication/email_verify_screen.dart';
+import 'package:quick_logi/screens/authentication/join_screen.dart';
+import 'package:quick_logi/screens/authentication/login_screen.dart';
 import 'package:quick_logi/screens/request_info_select/date_select_screen.dart';
 import 'package:quick_logi/screens/home_screen.dart';
 import 'package:quick_logi/screens/request_info_select/freight_select_screen.dart';
@@ -9,7 +11,9 @@ import 'package:quick_logi/screens/request_info_select/place_select_screen.dart'
 import 'package:quick_logi/screens/request_info_select_screen.dart';
 import 'package:quick_logi/screens/splash_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -54,6 +58,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/JoinScreen',
           page: () => JoinScreen(),
+        ),
+        GetPage(
+          name: '/EmailVerifyScreen',
+          page: () => EmailVerifyScreen(),
         ),
       ],
     );
