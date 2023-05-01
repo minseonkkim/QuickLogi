@@ -13,12 +13,12 @@ class FreightSelectScreen extends StatefulWidget {
 }
 
 class _FreightSelectScreenState extends State<FreightSelectScreen> {
+  int _formCount = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: BackTopBar(),
-      body: SingleChildScrollView(
-          child: Padding(
+      body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(children: [
           Row(
@@ -62,29 +62,47 @@ class _FreightSelectScreenState extends State<FreightSelectScreen> {
           SizedBox(
             height: 25,
           ),
-          FreightInfoForm(),
-          SizedBox(
-            height: 10,
+          Expanded(
+            child: ListView(children: [
+              ListView.builder(
+                physics: ScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: _formCount,
+                itemBuilder: (context, index) {
+                  return FreightInfoForm(
+                    index: index + 1,
+                  );
+                },
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              GestureDetector(
+                onTap: () {
+                  _formCount++;
+                  setState(() {});
+                },
+                child: Container(
+                  alignment: Alignment.center,
+                  padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
+                  decoration: BoxDecoration(
+                    color: LIGHT,
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                  ),
+                  child: Text(
+                    '+ 품목 추가',
+                    style: TextStyle(
+                        fontFamily: 'Pretendard', color: GREY1, fontSize: 18),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 80,
+              )
+            ]),
           ),
-          GestureDetector(
-            onTap: () {
-              // 품목 추가
-            },
-            child: Container(
-              padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
-              decoration: BoxDecoration(
-                color: LIGHT,
-                borderRadius: BorderRadius.all(Radius.circular(20.0)),
-              ),
-              child: Text(
-                '+ 품목 추가',
-                style: TextStyle(
-                    fontFamily: 'Pretendard', color: GREY1, fontSize: 18),
-              ),
-            ),
-          )
         ]),
-      )),
+      ),
       bottomSheet: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ElevatedButton(
@@ -108,6 +126,8 @@ class _FreightSelectScreenState extends State<FreightSelectScreen> {
 }
 
 class FreightInfoForm extends StatefulWidget {
+  final int index;
+  FreightInfoForm({required this.index});
   @override
   State<FreightInfoForm> createState() => _FreightInfoFormState();
 }
@@ -147,25 +167,35 @@ class _FreightInfoFormState extends State<FreightInfoForm> {
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(10.0),
+      margin: EdgeInsets.symmetric(vertical: 8.0),
       decoration: BoxDecoration(
         color: GREY2,
         borderRadius: BorderRadius.all(Radius.circular(10.0)),
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              '화물1',
-              style: TextStyle(
-                  fontFamily: 'PretendardBold',
-                  color: Colors.black,
-                  fontSize: 22),
-            ),
-            SizedBox(
-              width: 10,
+            Row(
+              children: [
+                Text(
+                  '화물' + widget.index.toString(),
+                  style: TextStyle(
+                      fontFamily: 'PretendardBold',
+                      color: Colors.black,
+                      fontSize: 22),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Icon(
+                  Icons.edit,
+                  color: GREY1,
+                )
+              ],
             ),
             Icon(
-              Icons.edit,
+              Icons.delete,
               color: GREY1,
             )
           ],
