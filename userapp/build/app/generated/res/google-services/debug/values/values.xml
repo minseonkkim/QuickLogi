@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">250392337840-al1u5dbgcnp22tkkd9b72nasq2e1fd94.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">250392337840</string>
+    <string name="google_api_key" translatable="false">AIzaSyDHcBtR0KquTLR3huXWRRMQNBGx3F0duXw</string>
+    <string name="google_app_id" translatable="false">1:250392337840:android:e7d06cbfe3b33cd1c18a75</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDHcBtR0KquTLR3huXWRRMQNBGx3F0duXw</string>
+    <string name="google_storage_bucket" translatable="false">quicklogi.appspot.com</string>
+    <string name="project_id" translatable="false">quicklogi</string>
+</resources>

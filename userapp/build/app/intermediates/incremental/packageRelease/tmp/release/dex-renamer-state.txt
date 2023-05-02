@@ -1,0 +1,4 @@
+#Mon Apr 10 19:53:36 KST 2023
+base.0=C\:\\flutterapp\\quick_logi\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

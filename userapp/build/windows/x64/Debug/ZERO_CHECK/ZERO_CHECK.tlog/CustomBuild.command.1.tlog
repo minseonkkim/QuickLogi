@@ -1,0 +1,10 @@
+^C:\FLUTTERAPP\QUICK_LOGI\BUILD\WINDOWS\CMAKEFILES\CE72B29B24CC513F463C7C808498DE5C\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/flutterapp/quick_logi/windows -BC:/flutterapp/quick_logi/build/windows --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/flutterapp/quick_logi/build/windows/quick_logi.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

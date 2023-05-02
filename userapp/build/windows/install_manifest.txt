@@ -1,0 +1,13 @@
+C:/flutterapp/quick_logi/build/windows/runner/Debug/data/icudtl.dat
+C:/flutterapp/quick_logi/build/windows/runner/Debug/flutter_windows.dll
+C:/flutterapp/quick_logi/build/windows/runner/Debug/data/flutter_assets/AssetManifest.json
+C:/flutterapp/quick_logi/build/windows/runner/Debug/data/flutter_assets/assets/fonts/Montserrat-VariableFont_wght.ttf
+C:/flutterapp/quick_logi/build/windows/runner/Debug/data/flutter_assets/assets/fonts/Pretendard-Bold.otf
+C:/flutterapp/quick_logi/build/windows/runner/Debug/data/flutter_assets/assets/fonts/Pretendard-Medium.otf
+C:/flutterapp/quick_logi/build/windows/runner/Debug/data/flutter_assets/FontManifest.json
+C:/flutterapp/quick_logi/build/windows/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+C:/flutterapp/quick_logi/build/windows/runner/Debug/data/flutter_assets/kernel_blob.bin
+C:/flutterapp/quick_logi/build/windows/runner/Debug/data/flutter_assets/NOTICES
+C:/flutterapp/quick_logi/build/windows/runner/Debug/data/flutter_assets/NOTICES.Z
+C:/flutterapp/quick_logi/build/windows/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+C:/flutterapp/quick_logi/build/windows/runner/Debug/data/flutter_assets/shaders/ink_sparkle.frag

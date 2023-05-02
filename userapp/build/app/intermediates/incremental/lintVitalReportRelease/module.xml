@@ -1,0 +1,18 @@
+<lint-module
+    format="1"
+    dir="C:\flutterapp\quick_logi\android\app"
+    name=":app"
+    type="APP"
+    maven="android:app:"
+    gradle="7.2.0"
+    buildFolder="C:\flutterapp\quick_logi\build\app"
+    bootClassPath="C:\Users\82103\AppData\Local\Android\Sdk\platforms\android-33\android.jar;C:\Users\82103\AppData\Local\Android\Sdk\build-tools\30.0.3\core-lambda-stubs.jar"
+    javaSourceLevel="1.8"
+    compileTarget="android-33">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>
