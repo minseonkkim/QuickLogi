@@ -66,7 +66,7 @@ class SplashScreen extends StatelessWidget {
                 children: [
                   ElevatedButton(
                       onPressed: () {
-                        Get.toNamed('/HomeScreen');
+                        Get.toNamed('/MainScreen');
                       },
                       style: ElevatedButton.styleFrom(
                         primary: LIGHT, // Background color

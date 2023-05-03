@@ -4,11 +4,14 @@ import 'package:get/get.dart';
 import 'package:quick_logi/screens/authentication/email_verify_screen.dart';
 import 'package:quick_logi/screens/authentication/join_screen.dart';
 import 'package:quick_logi/screens/authentication/login_screen.dart';
+import 'package:quick_logi/screens/main_screen.dart';
+import 'package:quick_logi/screens/profile_screen.dart';
 import 'package:quick_logi/screens/request_info_select/date_select_screen.dart';
 import 'package:quick_logi/screens/home_screen.dart';
 import 'package:quick_logi/screens/request_info_select/freight_select_screen.dart';
 import 'package:quick_logi/screens/request_info_select/place_select_screen.dart';
 import 'package:quick_logi/screens/request_info_select_screen.dart';
+import 'package:quick_logi/screens/request_list_screen.dart';
 import 'package:quick_logi/screens/splash_screen.dart';
 
 void main() async {
@@ -30,11 +33,14 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/SplashScreen',
       getPages: [
-        GetPage(name: '/HomeScreen', page: () => HomeScreen()),
         GetPage(
           name: '/SplashScreen',
           page: () => SplashScreen(),
         ),
+        GetPage(name: '/MainScreen', page: () => MainScreen()),
+        GetPage(name: '/HomeScreen', page: () => HomeScreen()),
+        GetPage(name: '/RequestListScreen', page: () => RequestListScreen()),
+        GetPage(name: '/ProfileScreen', page: () => ProfileScreen()),
         GetPage(
           name: '/RequestInfoSelectScreen',
           page: () => RequestInfoSelectScreen(),

@@ -122,7 +122,7 @@ class LoginScreen extends StatelessWidget {
                         .then((value) {
                       print(value);
                       value.user!.emailVerified == true //이메일 인증 여부
-                          ? Get.offAllNamed('/HomeScreen')
+                          ? Get.offAllNamed('/MainScreen')
                           : print('이메일 확인 안댐');
                       return value;
                     });
