@@ -1,13 +1,14 @@
 import 'dart:ui';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:get/get.dart';
+import 'package:quick_logi/utilities/components.dart';
 import 'package:quick_logi/utilities/constants.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,24 +63,37 @@ class ProfileScreen extends StatelessWidget {
                   ])),
                   Column(
                     children: [
-                      Text(
-                        '로그아웃',
-                        style: TextStyle(
-                            decoration: TextDecoration.underline,
-                            fontFamily: 'Pretendard',
-                            color: GREY1,
-                            fontSize: 15),
+                      GestureDetector(
+                        onTap: () {
+                          showYesOrNoDialog('로그아웃 하시겠습니까?', () {
+                            FirebaseAuth.instance.signOut();
+                            Get.back();
+                          });
+                        },
+                        child: Text(
+                          '로그아웃',
+                          style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              fontFamily: 'Pretendard',
+                              color: GREY1,
+                              fontSize: 15),
+                        ),
                       ),
                       SizedBox(
                         height: 5,
                       ),
-                      Text(
-                        '회원탈퇴',
-                        style: TextStyle(
-                            decoration: TextDecoration.underline,
-                            fontFamily: 'Pretendard',
-                            color: GREY1,
-                            fontSize: 15),
+                      GestureDetector(
+                        onTap: () {
+                          showYesOrNoDialog('정말로 회원탈퇴 하시겠습니까?', () {});
+                        },
+                        child: Text(
+                          '회원탈퇴',
+                          style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              fontFamily: 'Pretendard',
+                              color: GREY1,
+                              fontSize: 15),
+                        ),
                       ),
                     ],
                   )

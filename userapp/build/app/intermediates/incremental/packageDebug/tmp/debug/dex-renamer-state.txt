@@ -1,4 +1,4 @@
-#Wed May 03 14:49:52 KST 2023
+#Tue May 09 13:40:26 KST 2023
 base.0=C\:\\flutterapp\\quick_logi\\userapp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
