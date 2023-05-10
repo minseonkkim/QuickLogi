@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -50,7 +51,8 @@ class HomeScreen extends StatelessWidget {
               RichText(
                   text: TextSpan(children: [
                 TextSpan(
-                  text: '안녕하세요 {}님',
+                  text:
+                      '안녕하세요 ${FirebaseAuth.instance.currentUser!.displayName ?? ""}님',
                   style: TextStyle(
                       fontFamily: 'PretendardBold',
                       color: Colors.black,

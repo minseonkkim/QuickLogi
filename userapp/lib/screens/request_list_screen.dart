@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 import 'package:quick_logi/utilities/constants.dart';
 
 class RequestListController extends GetxController {
-  RxBool total = false.obs;
+  RxBool total = true.obs;
   RxBool ing = false.obs;
   RxBool completed = false.obs;
 }

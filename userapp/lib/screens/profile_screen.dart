@@ -120,7 +120,8 @@ class ProfileScreen extends StatelessWidget {
                       color: GREY1,
                     ),
                     borderRadius: BorderRadius.circular(8)),
-                child: Text('홍길동',
+                child: Text(
+                    FirebaseAuth.instance.currentUser!.displayName ?? "",
                     style: TextStyle(
                         fontFamily: 'Pretendard',
                         color: Colors.black,
@@ -147,7 +148,7 @@ class ProfileScreen extends StatelessWidget {
                       color: GREY1,
                     ),
                     borderRadius: BorderRadius.circular(8)),
-                child: Text('minsun9856@gmail.com',
+                child: Text(FirebaseAuth.instance.currentUser!.email ?? "",
                     style: TextStyle(
                         fontFamily: 'Pretendard',
                         color: Colors.black,
