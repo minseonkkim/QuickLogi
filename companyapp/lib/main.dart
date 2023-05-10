@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/home_screen.dart';
+import 'package:flutter_application_1/screens/main_screen.dart';
+import 'package:flutter_application_1/screens/profile_screen.dart';
+import 'package:flutter_application_1/screens/request_list_screen.dart';
+import 'package:flutter_application_1/screens/splash_screen.dart';
+import 'package:get/get.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -10,12 +17,23 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'QuickLogiComp',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blueGrey,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/SplashScreen',
+      getPages: [
+        GetPage(
+          name: '/SplashScreen',
+          page: () => SplashScreen(),
+        ),
+        GetPage(name: '/MainScreen', page: () => MainScreen()),
+        GetPage(name: '/HomeScreen', page: () => HomeScreen()),
+        GetPage(name: '/RequestListScreen', page: () => RequestListScreen()),
+        GetPage(name: '/ProfileScreen', page: () => ProfileScreen()),
+      ],
     );
   }
 }
