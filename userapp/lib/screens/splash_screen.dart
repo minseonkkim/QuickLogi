@@ -26,7 +26,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     FirebaseAuth.instance.authStateChanges().listen((User? user) {
-      if (user == null) {
+      if (user == null ||
+          FirebaseAuth.instance.currentUser!.emailVerified == false) {
         // 로그인 되어있지 않음
         controller.showLogInButton(_logInAndJoinButton());
       } else {

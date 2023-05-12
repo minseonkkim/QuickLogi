@@ -123,7 +123,8 @@ class LoginScreen extends StatelessWidget {
                       print(value);
                       value.user!.emailVerified == true //이메일 인증 여부
                           ? Get.offAllNamed('/MainScreen')
-                          : print('이메일 확인 안댐');
+                          : Get.snackbar('이메일 인증을 완료해주세요', '',
+                              snackPosition: SnackPosition.TOP);
                       return value;
                     });
                   } on FirebaseAuthException catch (e) {
