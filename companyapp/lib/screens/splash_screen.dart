@@ -13,7 +13,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: MAINCOLOR,
+        color: Colors.white,
         width: double.infinity,
         height: double.infinity,
         child: Stack(children: [
@@ -30,7 +30,7 @@ class SplashScreen extends StatelessWidget {
                         fontVariations: <FontVariation>[
                           FontVariation('wght', 600.0)
                         ],
-                        color: Colors.white,
+                        color: MAINCOLOR,
                         fontSize: 20),
                   ),
                   RichText(
@@ -42,7 +42,7 @@ class SplashScreen extends StatelessWidget {
                           fontVariations: <FontVariation>[
                             FontVariation('wght', 700.0)
                           ],
-                          color: Colors.white,
+                          color: MAINCOLOR,
                           fontSize: 38),
                     ),
                     TextSpan(
@@ -85,7 +85,7 @@ class SplashScreen extends StatelessWidget {
                       '퀵로지컴프 시작하기',
                       style: TextStyle(
                           fontFamily: 'MontserratVariable',
-                          color: Colors.white,
+                          color: MAINCOLOR,
                           fontSize: 15),
                     ),
                   ),
@@ -97,7 +97,7 @@ class SplashScreen extends StatelessWidget {
                         '로그인하기',
                         style: TextStyle(
                             fontFamily: 'MontserratVariable',
-                            color: Colors.white,
+                            color: MAINCOLOR,
                             fontSize: 15),
                       ))
                 ],

@@ -57,7 +57,7 @@ class _MainScreenState extends State<MainScreen> {
                       Icons.dashboard_customize_outlined,
                       color: Colors.black,
                     ),
-              label: '적재현황'),
+              label: '배치해보기'),
           BottomNavigationBarItem(
               icon: _selectedIndex == 2
                   ? Icon(Icons.person, color: MAINCOLOR)
