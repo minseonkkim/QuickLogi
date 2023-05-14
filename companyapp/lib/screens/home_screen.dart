@@ -68,7 +68,7 @@ class HomeScreen extends StatelessWidget {
                 height: 5,
               ),
               Text(
-                '운송 요청을 목록에서 확인하고 승인 또는 거절을 선택해주세요.',
+                '운송 요청 목록을 확인해보세요!',
                 style: TextStyle(
                     fontFamily: 'Pretendard', color: GREY1, fontSize: 15),
               ),
@@ -130,7 +130,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '퀵로지 운송 요청 목록',
+                      '운송 요청 목록',
                       style: TextStyle(
                           fontFamily: 'PretendardBold',
                           color: Colors.black,
