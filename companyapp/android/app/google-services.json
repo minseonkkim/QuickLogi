@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "250392337840",
+    "firebase_url": "https://quicklogi-default-rtdb.firebaseio.com",
+    "project_id": "quicklogi",
+    "storage_bucket": "quicklogi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:250392337840:android:94b5a9450a9b809ec18a75",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "250392337840-al1u5dbgcnp22tkkd9b72nasq2e1fd94.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHcBtR0KquTLR3huXWRRMQNBGx3F0duXw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "250392337840-al1u5dbgcnp22tkkd9b72nasq2e1fd94.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:250392337840:android:e7d06cbfe3b33cd1c18a75",
+        "android_client_info": {
+          "package_name": "com.example.quick_logi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "250392337840-al1u5dbgcnp22tkkd9b72nasq2e1fd94.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHcBtR0KquTLR3huXWRRMQNBGx3F0duXw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "250392337840-al1u5dbgcnp22tkkd9b72nasq2e1fd94.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
