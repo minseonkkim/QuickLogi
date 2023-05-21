@@ -4,14 +4,14 @@
             "outputFile": "com.example.quick_logi.app-mergeDebugResources-14:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\flutterapp\\quick_logi\\userapp\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\user\\QuickLogi\\userapp\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
-                        "startLines": "3,-1",
-                        "startColumns": "4,-1",
-                        "startOffsets": "172,-1",
-                        "endLines": "11,-1",
-                        "endColumns": "12,-1",
-                        "endOffsets": "747,-1"
+                        "startLines": "3,18",
+                        "startColumns": "4,4",
+                        "startOffsets": "175,1106",
+                        "endLines": "11,20",
+                        "endColumns": "12,12",
+                        "endOffsets": "757,1272"
                     },
                     "to": {
                         "startLines": "2,10",
@@ -20,30 +20,6 @@
                         "endLines": "9,12",
                         "endColumns": "12,12",
                         "endOffsets": "502,671"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-mergeDebugResources-14:\\values-night-v8\\values-night-v8.xml",
-            "map": [
-                {
-                    "source": "C:\\flutterapp\\quick_logi\\userapp\\android\\app\\src\\main\\res\\values-night\\styles.xml",
-                    "from": {
-                        "startLines": "3,14",
-                        "startColumns": "4,4",
-                        "startOffsets": "175,831",
-                        "endLines": "7,16",
-                        "endColumns": "12,12",
-                        "endOffsets": "482,997"
-                    },
-                    "to": {
-                        "startLines": "2,6",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,236",
-                        "endLines": "5,8",
-                        "endColumns": "12,12",
-                        "endOffsets": "231,400"
                     }
                 }
             ]

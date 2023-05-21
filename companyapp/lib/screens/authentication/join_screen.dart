@@ -13,7 +13,7 @@ class JoinScreen extends StatelessWidget {
   FocusNode _emailFocus = new FocusNode();
   FocusNode _passwordFocus = new FocusNode();
 
-  TextEditingController _nameControler = TextEditingController();
+  TextEditingController _nameController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
@@ -70,6 +70,7 @@ class JoinScreen extends StatelessWidget {
                     TextFormField(
                         keyboardType: TextInputType.text,
                         focusNode: _nameFocus,
+                        controller: _nameController,
                         decoration: InputDecoration(
                             fillColor: GREY2,
                             filled: true,
@@ -152,6 +153,11 @@ class JoinScreen extends StatelessWidget {
                       return value;
                     });
                     FirebaseAuth.instance.currentUser?.sendEmailVerification();
+
+                    User? user = FirebaseAuth.instance.currentUser;
+                    if (user != null) {
+                      user.updateProfile(displayName: _nameController.text);
+                    }
                   } on FirebaseAuthException catch (e) {
                     if (e.code == 'weak-password') {
                       print('the password provided is too weak');

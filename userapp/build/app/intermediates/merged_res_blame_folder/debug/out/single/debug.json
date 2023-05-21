@@ -1,35 +1,19 @@
 [
     {
-        "merged": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-merged_res-16:\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-main-9:\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "com.example.quick_logi.app-merged_res-16:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.quick_logi.app-main-9:/mipmap-xhdpi/ic_launcher.png"
     },
     {
         "merged": "com.example.quick_logi.app-merged_res-16:/drawable-night_launch_background.xml.flat",
         "source": "com.example.quick_logi.app-main-9:/drawable-night/launch_background.xml"
     },
     {
-        "merged": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-merged_res-16:\\drawable_launch_background.xml.flat",
-        "source": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-main-9:\\drawable\\launch_background.xml"
+        "merged": "com.example.quick_logi.app-merged_res-16:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.example.quick_logi.app-main-9:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-merged_res-16:\\drawable-xxxhdpi_splash.png.flat",
-        "source": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-main-9:\\drawable-xxxhdpi\\splash.png"
-    },
-    {
-        "merged": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-merged_res-16:\\drawable-v21_launch_background.xml.flat",
-        "source": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-main-9:\\drawable-v21\\launch_background.xml"
-    },
-    {
-        "merged": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-merged_res-16:\\drawable-xxhdpi_splash.png.flat",
-        "source": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-main-9:\\drawable-xxhdpi\\splash.png"
-    },
-    {
-        "merged": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-merged_res-16:\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-main-9:\\mipmap-xhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-merged_res-16:\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-main-9:\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "com.example.quick_logi.app-merged_res-16:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.quick_logi.app-main-9:/mipmap-hdpi/ic_launcher.png"
     },
     {
         "merged": "com.example.quick_logi.app-merged_res-16:/drawable_launch_background.xml.flat",
@@ -40,24 +24,8 @@
         "source": "com.example.quick_logi.app-main-9:/drawable-v21/launch_background.xml"
     },
     {
-        "merged": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-merged_res-16:\\drawable-v21_background.png.flat",
-        "source": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-main-9:\\drawable-v21\\background.png"
-    },
-    {
-        "merged": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-merged_res-16:\\drawable-hdpi_splash.png.flat",
-        "source": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-main-9:\\drawable-hdpi\\splash.png"
-    },
-    {
-        "merged": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-merged_res-16:\\drawable-mdpi_splash.png.flat",
-        "source": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-main-9:\\drawable-mdpi\\splash.png"
-    },
-    {
-        "merged": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-merged_res-16:\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-main-9:\\mipmap-hdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-merged_res-16:\\drawable-xhdpi_splash.png.flat",
-        "source": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-main-9:\\drawable-xhdpi\\splash.png"
+        "merged": "com.example.quick_logi.app-merged_res-16:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.quick_logi.app-main-9:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
         "merged": "com.example.quick_logi.app-merged_res-16:/drawable-night-v21_background.png.flat",
@@ -72,12 +40,8 @@
         "source": "com.example.quick_logi.app-main-9:/drawable-v21/background.png"
     },
     {
-        "merged": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-merged_res-16:\\drawable_background.png.flat",
-        "source": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-main-9:\\drawable\\background.png"
-    },
-    {
-        "merged": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-merged_res-16:\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\82103\\.gradle\\daemon\\7.5\\com.example.quick_logi.app-main-9:\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "com.example.quick_logi.app-merged_res-16:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.example.quick_logi.app-main-9:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
         "merged": "com.example.quick_logi.app-merged_res-16:/drawable_background.png.flat",

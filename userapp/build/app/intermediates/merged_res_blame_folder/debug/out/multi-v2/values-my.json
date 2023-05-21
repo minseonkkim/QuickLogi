@@ -4,24 +4,24 @@
             "outputFile": "com.example.quick_logi.app-mergeDebugResources-14:/values-my/values-my.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\82103\\.gradle\\caches\\transforms-3\\dc66a9e887fa197d342a9170a296fb1f\\transformed\\core-1.6.0\\res\\values-my\\values-my.xml",
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-3\\ff69d175c49cfa9394e8ca832c98affc\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-my\\values.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "149",
+                        "endOffsets": "344"
                     },
                     "to": {
-                        "startLines": "24",
+                        "startLines": "10",
                         "startColumns": "4",
-                        "startOffsets": "3326",
-                        "endColumns": "100",
-                        "endOffsets": "3422"
+                        "startOffsets": "1291",
+                        "endColumns": "153",
+                        "endOffsets": "1440"
                     }
                 },
                 {
-                    "source": "C:\\Users\\82103\\.gradle\\caches\\transforms-3\\a89bd0e64120b064165fe7d2635bd104\\transformed\\browser-1.4.0\\res\\values-my\\values-my.xml",
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-3\\a89bd0e64120b064165fe7d2635bd104\\transformed\\browser-1.4.0\\res\\values-my\\values-my.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -38,7 +38,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\82103\\.gradle\\caches\\transforms-3\\918042baf935b9d5136973422681b2a3\\transformed\\jetified-play-services-base-17.1.0\\res\\values-my\\values.xml",
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-3\\dc66a9e887fa197d342a9170a296fb1f\\transformed\\core-1.6.0\\res\\values-my\\values-my.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "24",
+                        "startColumns": "4",
+                        "startOffsets": "3326",
+                        "endColumns": "100",
+                        "endOffsets": "3422"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-3\\918042baf935b9d5136973422681b2a3\\transformed\\jetified-play-services-base-17.1.0\\res\\values-my\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -52,23 +69,6 @@
                         "startOffsets": "105,214,410,546,659,865,999,1152,1445,1680,1788,1989,2134,2351,2568,2668,2771",
                         "endColumns": "108,195,135,112,205,133,152,138,234,107,200,144,216,216,99,102,117",
                         "endOffsets": "209,405,541,654,860,994,1147,1286,1675,1783,1984,2129,2346,2563,2663,2766,2884"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\82103\\.gradle\\caches\\transforms-3\\ff69d175c49cfa9394e8ca832c98affc\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-my\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "195",
-                        "endColumns": "149",
-                        "endOffsets": "344"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1291",
-                        "endColumns": "153",
-                        "endOffsets": "1440"
                     }
                 }
             ]
