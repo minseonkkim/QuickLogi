@@ -17,3 +17,4 @@ com.example.quick_logi.app-mergeDebugResources-15 C:\flutterapp\quick_logi\usera
 com.example.quick_logi.app-merged_res-16 C:\flutterapp\quick_logi\userapp\build\app\intermediates\merged_res\debug
 com.example.quick_logi.app-packaged_res-17 C:\flutterapp\quick_logi\userapp\build\firebase_auth\intermediates\packaged_res\debug
 com.example.quick_logi.app-packaged_res-18 C:\flutterapp\quick_logi\userapp\build\firebase_core\intermediates\packaged_res\debug
+com.example.quick_logi.app-packaged_res-19 C:\flutterapp\quick_logi\userapp\build\flutter_native_splash\intermediates\packaged_res\debug
