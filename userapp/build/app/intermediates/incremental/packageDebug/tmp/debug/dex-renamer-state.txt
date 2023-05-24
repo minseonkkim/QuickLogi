@@ -1,4 +1,12 @@
+<<<<<<< HEAD
+#Mon May 22 20:54:21 KST 2023
+base.1=C\:\\flutterapp\\quick_logi\\userapp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
+path.1=classes2.dex
+base.0=C\:\\flutterapp\\quick_logi\\userapp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.1=classes2.dex
+=======
 #Wed May 17 17:12:55 KST 2023
 base.0=C\:\\Users\\user\\QuickLogi\\userapp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+>>>>>>> c761c4139d86f5975dbe3cf81590b4b209f468ee
 renamed.0=classes.dex
 path.0=classes.dex

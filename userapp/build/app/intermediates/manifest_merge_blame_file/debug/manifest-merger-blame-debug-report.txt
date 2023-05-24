@@ -29,7 +29,7 @@
 19-->[com.google.android.gms:play-services-measurement:21.2.2] C:\Users\user\.gradle\caches\transforms-3\037e48d082df3b02aaaf4e885597c278\transformed\jetified-play-services-measurement-21.2.2\AndroidManifest.xml:26:22-107
 20
 21    <application
-22        android:name="android.app.Application"
+22        android:name="io.flutter.app.FlutterMultiDexApplication"
 23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 23-->[androidx.core:core:1.6.0] C:\Users\user\.gradle\caches\transforms-3\dc66a9e887fa197d342a9170a296fb1f\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 24        android:debuggable="true"
