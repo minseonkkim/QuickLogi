@@ -22,7 +22,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   final controller = Get.put(LogInAndJoinButtonController());
   @override
   void initState() {

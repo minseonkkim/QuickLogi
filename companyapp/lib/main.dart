@@ -29,6 +29,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blueGrey,
       ),
       initialRoute: '/SplashScreen',
+      // routes: {
+      //   '/': (context) => SplashScreen(),
+      //   '/MainScreen': (context) => MainScreen(),
+      //   '/HomeScreen': (context) => HomeScreen(),
+      //   '/RequestListScreen': (context) => RequestListScreen(),
+      //   '/ProfileScreen': (context) => ProfileScreen(),
+      // },
       getPages: [
         GetPage(
           name: '/SplashScreen',
