@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/authentication/join_screen.dart';
+import 'package:flutter_application_1/screens/authentication/login_screen.dart';
 import 'package:flutter_application_1/screens/home_screen.dart';
 import 'package:flutter_application_1/screens/main_screen.dart';
 import 'package:flutter_application_1/screens/profile_screen.dart';
@@ -45,6 +47,9 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/HomeScreen', page: () => HomeScreen()),
         GetPage(name: '/RequestListScreen', page: () => const RequestListScreen()),
         GetPage(name: '/ProfileScreen', page: () => ProfileScreen()),
+        GetPage(name: '/JoinScreen', page: () => JoinScreen()),
+        GetPage(name: '/LoginScreen', page: () => LoginScreen())
+
       ],
     );
   }
