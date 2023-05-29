@@ -19,7 +19,7 @@ class ProfileScreen extends StatelessWidget {
           child: RichText(
               text: TextSpan(children: [
             TextSpan(
-              text: 'QuickLogi',
+              text: 'QuickLogiComp',
               style: TextStyle(
                   fontFamily: 'MontserratVariable',
                   fontVariations: <FontVariation>[FontVariation('wght', 700.0)],
@@ -132,7 +132,7 @@ class ProfileScreen extends StatelessWidget {
               SizedBox(
                 height: 15,
               ),
-              Text('이름',
+              Text('회사명',
                   style: TextStyle(
                       fontFamily: 'Pretendard',
                       color: Colors.black,
