@@ -67,8 +67,14 @@ class ProfileScreen extends StatelessWidget {
                       GestureDetector(
                         onTap: () {
                           showYesOrNoDialog('로그아웃 하시겠습니까?', () {
-                            FirebaseAuth.instance.signOut();
-                            Get.back();
+                            try {
+                              FirebaseAuth.instance.signOut();
+                              Get.offAllNamed('/SplashScreen');
+                            } catch (e) {
+                              print(e);
+                              Get.snackbar('오류', '로그아웃 중 오류가 발생했습니다.',
+                                  snackPosition: SnackPosition.TOP);
+                            }
                           });
                         },
                         child: Text(
@@ -85,7 +91,30 @@ class ProfileScreen extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          showYesOrNoDialog('정말로 회원탈퇴 하시겠습니까?', () {});
+                          showYesOrNoDialog('정말로 회원탈퇴 하시겠습니까?', () {
+                            try {
+                              FirebaseAuth.instance.currentUser!.delete();
+                              Get.snackbar('회원탈퇴 완료', '',
+                                  snackPosition: SnackPosition.TOP);
+                              FirebaseAuth.instance.signOut();
+                              Get.toNamed('/SplashScreen');
+                            } on FirebaseAuthException catch (e) {
+                              if (e.code == 'requires-recent-login') {
+                                // 사용자가 최근에 로그인하지 않았으므로 재인증 필요
+                                Get.snackbar('재인증 필요', '회원탈퇴를 위해 재인증이 필요합니다.',
+                                    snackPosition: SnackPosition.TOP);
+                                // 재인증을 위해 로그인 페이지로 이동
+                                Get.toNamed('/LoginPage');
+                              } else if (e.code == 'user-not-found') {
+                                // 사용자를 찾을 수 없음
+                                Get.snackbar('오류', '사용자를 찾을 수 없습니다.',
+                                    snackPosition: SnackPosition.TOP);
+                              } else {
+                                // 기타 예외
+                                print(e);
+                              }
+                            }
+                          });
                         },
                         child: Text(
                           '회원탈퇴',
@@ -121,7 +150,8 @@ class ProfileScreen extends StatelessWidget {
                       color: GREY1,
                     ),
                     borderRadius: BorderRadius.circular(8)),
-                child: Text('홍길동',
+                child: Text(
+                    FirebaseAuth.instance.currentUser!.displayName ?? "",
                     style: TextStyle(
                         fontFamily: 'Pretendard',
                         color: Colors.black,
@@ -148,7 +178,7 @@ class ProfileScreen extends StatelessWidget {
                       color: GREY1,
                     ),
                     borderRadius: BorderRadius.circular(8)),
-                child: Text('minsun9856@gmail.com',
+                child: Text(FirebaseAuth.instance.currentUser!.email ?? "",
                     style: TextStyle(
                         fontFamily: 'Pretendard',
                         color: Colors.black,

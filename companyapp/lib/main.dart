@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/authentication/email_verify_screen.dart';
 import 'package:flutter_application_1/screens/authentication/join_screen.dart';
 import 'package:flutter_application_1/screens/authentication/login_screen.dart';
 import 'package:flutter_application_1/screens/home_screen.dart';
@@ -48,8 +49,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/RequestListScreen', page: () => const RequestListScreen()),
         GetPage(name: '/ProfileScreen', page: () => ProfileScreen()),
         GetPage(name: '/JoinScreen', page: () => JoinScreen()),
-        GetPage(name: '/LoginScreen', page: () => LoginScreen())
-
+        GetPage(name: '/LoginScreen', page: () => LoginScreen()),
+        GetPage(name: '/EmailVerifyScreen',page: () => EmailVerifyScreen(),),
       ],
     );
   }

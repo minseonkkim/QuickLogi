@@ -50,7 +50,7 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
               icon: _selectedIndex == 1
                   ? Icon(
-                      Icons.list_alt_outlined,
+                      Icons.dashboard_customize_outlined,
                       color: MAINCOLOR,
                     )
                   : Icon(
