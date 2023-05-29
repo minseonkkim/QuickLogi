@@ -96,14 +96,14 @@ class _SplashScreenState extends State<SplashScreen> {
               bottom: 130,
               child: Column(
                 children: [
-                  ElevatedButton(
-                      onPressed: () {
-                        Get.toNamed('/MainScreen');
-                      },
-                      style: ElevatedButton.styleFrom(
-                        primary: LIGHT, // Background color
-                      ),
-                      child: Text('홈 화면 보기(임시 버튼)')),
+                  // ElevatedButton(
+                  //     onPressed: () {
+                  //       Get.toNamed('/MainScreen');
+                  //     },
+                  //     style: ElevatedButton.styleFrom(
+                  //       primary: LIGHT, // Background color
+                  //     ),
+                  //     child: Text('홈 화면 보기(임시 버튼)')),
                   // ElevatedButton(
                   //   onPressed: () {
                   //     Get.toNamed('/JoinScreen');
