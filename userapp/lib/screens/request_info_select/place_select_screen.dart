@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 import 'package:quick_logi/utilities/components.dart';
 import 'package:quick_logi/utilities/constants.dart';
@@ -64,7 +63,9 @@ class _PlaceSelectScreenState extends State<PlaceSelectScreen> {
                 height: 25,
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Get.toNamed('/PlaceSearchScreen');
+                },
                 child: Container(
                   padding: const EdgeInsets.all(13.0),
                   decoration: BoxDecoration(
@@ -80,7 +81,7 @@ class _PlaceSelectScreenState extends State<PlaceSelectScreen> {
                       width: 10,
                     ),
                     Text(
-                      '출발지 주소 입력하기',
+                      '출발지 입력하기',
                       style: TextStyle(
                           fontFamily: 'Pretendard', color: GREY1, fontSize: 22),
                     )
@@ -91,7 +92,9 @@ class _PlaceSelectScreenState extends State<PlaceSelectScreen> {
                 height: 13,
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Get.toNamed('/PlaceSearchScreen');
+                },
                 child: Container(
                   padding: const EdgeInsets.all(13.0),
                   decoration: BoxDecoration(
@@ -107,7 +110,7 @@ class _PlaceSelectScreenState extends State<PlaceSelectScreen> {
                       width: 10,
                     ),
                     Text(
-                      '도착지 주소 입력하기',
+                      '도착지 입력하기',
                       style: TextStyle(
                           fontFamily: 'Pretendard', color: GREY1, fontSize: 22),
                     )

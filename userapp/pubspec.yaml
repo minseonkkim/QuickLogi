@@ -39,6 +39,7 @@ dependencies:
   firebase_core: ^2.9.0
   flutter_native_splash: ^2.2.19
   cloud_firestore: ^4.7.1
+  http: ^1.0.0
 
 dev_dependencies:
   flutter_test:

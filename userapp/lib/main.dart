@@ -15,6 +15,8 @@ import 'package:quick_logi/screens/request_info_select_screen.dart';
 import 'package:quick_logi/screens/request_list_screen.dart';
 import 'package:quick_logi/screens/splash_screen.dart';
 
+import 'screens/request_info_select/place_search_screen.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -58,6 +60,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/PlaceSelectScreen',
           page: () => PlaceSelectScreen(),
+        ),
+        GetPage(
+          name: '/PlaceSearchScreen',
+          page: () => PlaceSearchScreen(),
         ),
         GetPage(
           name: '/DateSelectScreen',
