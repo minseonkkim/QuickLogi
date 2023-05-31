@@ -134,27 +134,6 @@ class JoinScreen extends StatelessWidget {
                             hintText: '***********',
                             border: OutlineInputBorder(),
                             contentPadding: EdgeInsets.all(5))),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(2, 0, 0, 5),
-                      child: Text(
-                        '회사명',
-                        style: TextStyle(
-                            fontFamily: 'Pretendard',
-                            color: Colors.black,
-                            fontSize: 20),
-                      ),
-                    ),
-                    TextFormField(
-                        keyboardType: TextInputType.text,
-                        focusNode: _compnameFocus,
-                        controller: _nameController,
-                        decoration: InputDecoration(
-                            fillColor: GREY2,
-                            filled: true,
-                            prefixIcon: Icon(Icons.person_outline_rounded),
-                            hintText: '퀵로지컴프',
-                            border: OutlineInputBorder(),
-                            contentPadding: EdgeInsets.all(5))),
                     SizedBox(
                       height: 20,
                     ),
