@@ -7,7 +7,6 @@ import 'package:flutter_application_1/utilities/constants.dart';
 import 'package:flutter_application_1/utilities/validators.dart';
 import 'package:get/get.dart';
 
-
 class JoinScreen extends StatelessWidget {
   FocusNode _compnameFocus = new FocusNode();
   FocusNode _emailFocus = new FocusNode();
@@ -133,6 +132,9 @@ class JoinScreen extends StatelessWidget {
                             hintText: '***********',
                             border: OutlineInputBorder(),
                             contentPadding: EdgeInsets.all(5))),
+                    SizedBox(
+                      height: 20,
+                    ),
                   ],
                 )),
               )),

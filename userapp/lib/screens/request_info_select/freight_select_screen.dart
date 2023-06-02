@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:quick_logi/utilities/components.dart';
 import 'package:quick_logi/utilities/constants.dart';
+
+int freightIndex = 1;
+final List<FreightInfoForm> freightList = <FreightInfoForm>[
+  FreightInfoForm(
+    num: freightIndex,
+    index: 0,
+  )
+];
 
 class FreightSelectScreen extends StatefulWidget {
   const FreightSelectScreen({super.key});
@@ -13,7 +20,6 @@ class FreightSelectScreen extends StatefulWidget {
 }
 
 class _FreightSelectScreenState extends State<FreightSelectScreen> {
-  int _formCount = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,11 +73,9 @@ class _FreightSelectScreenState extends State<FreightSelectScreen> {
               ListView.builder(
                 physics: ScrollPhysics(),
                 shrinkWrap: true,
-                itemCount: _formCount,
+                itemCount: freightList.length,
                 itemBuilder: (context, index) {
-                  return FreightInfoForm(
-                    index: index + 1,
-                  );
+                  return freightList[index];
                 },
               ),
               SizedBox(
@@ -79,8 +83,13 @@ class _FreightSelectScreenState extends State<FreightSelectScreen> {
               ),
               GestureDetector(
                 onTap: () {
-                  _formCount++;
-                  setState(() {});
+                  setState(() {
+                    freightIndex++;
+                    freightList.add(FreightInfoForm(
+                      num: freightIndex,
+                      index: freightList.length,
+                    ));
+                  });
                 },
                 child: Container(
                   alignment: Alignment.center,
@@ -126,8 +135,8 @@ class _FreightSelectScreenState extends State<FreightSelectScreen> {
 }
 
 class FreightInfoForm extends StatefulWidget {
-  final int index;
-  FreightInfoForm({required this.index});
+  final int num, index;
+  FreightInfoForm({required this.num, required this.index});
   @override
   State<FreightInfoForm> createState() => _FreightInfoFormState();
 }
@@ -164,6 +173,9 @@ class _FreightInfoFormState extends State<FreightInfoForm> {
 
   @override
   Widget build(BuildContext context) {
+    _FreightSelectScreenState? parent =
+        context.findAncestorStateOfType<_FreightSelectScreenState>();
+
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(10.0),
@@ -179,7 +191,7 @@ class _FreightInfoFormState extends State<FreightInfoForm> {
             Row(
               children: [
                 Text(
-                  '화물' + widget.index.toString(),
+                  '화물' + widget.num.toString(),
                   style: TextStyle(
                       fontFamily: 'PretendardBold',
                       color: Colors.black,
@@ -194,10 +206,19 @@ class _FreightInfoFormState extends State<FreightInfoForm> {
                 )
               ],
             ),
-            Icon(
-              Icons.delete,
-              color: GREY1,
-            )
+            IconButton(
+              padding: EdgeInsets.zero,
+              constraints: BoxConstraints(),
+              onPressed: () {
+                parent!.setState(() {
+                  freightList.removeAt(widget.index);
+                });
+              },
+              icon: Icon(
+                Icons.delete,
+                color: GREY1,
+              ),
+            ),
           ],
         ),
         SizedBox(
