@@ -9,11 +9,11 @@ import 'package:get/get.dart';
 
 
 class JoinScreen extends StatelessWidget {
-  FocusNode _nameFocus = new FocusNode();
+  FocusNode _compnameFocus = new FocusNode();
   FocusNode _emailFocus = new FocusNode();
   FocusNode _passwordFocus = new FocusNode();
 
-  TextEditingController _nameController = TextEditingController();
+  TextEditingController _compnameController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
@@ -69,8 +69,8 @@ class JoinScreen extends StatelessWidget {
                     ),
                     TextFormField(
                         keyboardType: TextInputType.text,
-                        focusNode: _nameFocus,
-                        controller: _nameController,
+                        focusNode: _compnameFocus,
+                        controller: _compnameController,
                         decoration: InputDecoration(
                             fillColor: GREY2,
                             filled: true,
@@ -133,30 +133,6 @@ class JoinScreen extends StatelessWidget {
                             hintText: '***********',
                             border: OutlineInputBorder(),
                             contentPadding: EdgeInsets.all(5))),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(2, 0, 0, 5),
-                      child: Text(
-                        '회사명',
-                        style: TextStyle(
-                            fontFamily: 'Pretendard',
-                            color: Colors.black,
-                            fontSize: 20),
-                      ),
-                    ),
-                    TextFormField(
-                        keyboardType: TextInputType.text,
-                        focusNode: _compnameFocus,
-                        controller: _nameController,
-                        decoration: InputDecoration(
-                            fillColor: GREY2,
-                            filled: true,
-                            prefixIcon: Icon(Icons.person_outline_rounded),
-                            hintText: '퀵로지컴프',
-                            border: OutlineInputBorder(),
-                            contentPadding: EdgeInsets.all(5))),
-                    SizedBox(
-                      height: 20,
-                    ),
                   ],
                 )),
               )),
@@ -180,7 +156,7 @@ class JoinScreen extends StatelessWidget {
 
                     User? user = FirebaseAuth.instance.currentUser;
                     if (user != null) {
-                      user.updateProfile(displayName: _nameController.text);
+                      user.updateProfile(displayName: _compnameController.text);
                     }
                   } on FirebaseAuthException catch (e) {
                     if (e.code == 'weak-password') {

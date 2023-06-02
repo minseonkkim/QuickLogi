@@ -3,9 +3,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_application_1/screens/container_result_screen.dart';
 import 'package:flutter_application_1/screens/home_screen.dart';
 import 'package:flutter_application_1/screens/profile_screen.dart';
-import 'package:flutter_application_1/screens/request_list_screen.dart';
 import 'package:flutter_application_1/utilities/constants.dart';
 import 'package:get/get.dart';
 
@@ -21,7 +21,7 @@ class _MainScreenState extends State<MainScreen> {
 
   final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    RequestListScreen(), // 여기 수정
+    ContainerResultScreen(), // 여기 수정
     ProfileScreen()
   ];
 
