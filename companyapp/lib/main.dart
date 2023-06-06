@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/authentication/email_verify_screen.dart';
 import 'package:flutter_application_1/screens/authentication/join_screen.dart';
 import 'package:flutter_application_1/screens/authentication/login_screen.dart';
+import 'package:flutter_application_1/screens/container_result_screen.dart';
 import 'package:flutter_application_1/screens/home_screen.dart';
 import 'package:flutter_application_1/screens/main_screen.dart';
 import 'package:flutter_application_1/screens/profile_screen.dart';
-import 'package:flutter_application_1/screens/request_list_screen.dart';
 import 'package:flutter_application_1/screens/splash_screen.dart';
 import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
         ),
         GetPage(name: '/MainScreen', page: () => MainScreen()),
         GetPage(name: '/HomeScreen', page: () => HomeScreen()),
-        GetPage(name: '/RequestListScreen', page: () => const RequestListScreen()),
+        GetPage(name: '/ContainerResultScreen', page: () => ContainerResultScreen()),
         GetPage(name: '/ProfileScreen', page: () => ProfileScreen()),
         GetPage(name: '/JoinScreen', page: () => JoinScreen()),
         GetPage(name: '/LoginScreen', page: () => LoginScreen()),
