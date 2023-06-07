@@ -11,6 +11,7 @@ import 'package:quick_logi/screens/request_info_select/date_select_screen.dart';
 import 'package:quick_logi/screens/home_screen.dart';
 import 'package:quick_logi/screens/request_info_select/freight_select_screen.dart';
 import 'package:quick_logi/screens/request_info_select/place_select_screen.dart';
+import 'package:quick_logi/screens/request_info_select/search_screen.dart';
 import 'package:quick_logi/screens/request_info_select_screen.dart';
 import 'package:quick_logi/screens/request_list_screen.dart';
 import 'package:quick_logi/screens/splash_screen.dart';
@@ -64,6 +65,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/PlaceSearchScreen',
           page: () => PlaceSearchScreen(),
+        ),
+        GetPage(
+          name: '/SearchScreen',
+          page: () => SearchScreen(),
         ),
         GetPage(
           name: '/DateSelectScreen',

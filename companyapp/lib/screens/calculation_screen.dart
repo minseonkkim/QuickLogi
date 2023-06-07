@@ -4,10 +4,10 @@ import 'dart:math';
 class Box {
   double width;
   double length;
-  TextEditingController widthController = TextEditingController();
-  TextEditingController lengthController = TextEditingController();
+  TextEditingController widthController;
+  TextEditingController lengthController;
 
-  Box(this.width, this.length);
+  Box(this.width, this.length, this.widthController, this.lengthController);
 }
 
 class BoxContainer {
@@ -67,44 +67,58 @@ class _CalculationScreenState extends State<CalculationScreen> {
 
   List<Rect> placedBoxes = [];
 
+  BoxContainer get container => widget.container;
+
   @override
   void initState() {
     super.initState();
-    placeBoxes();
+    _placeBoxes();
   }
 
-  void placeBoxes() {
-    setState(() {
-      placedBoxes.clear();
+  void _placeBoxes() {
+    placedBoxes.clear();
 
-      for (List<Box> row in widget.result) {
-        for (Box box in row) {
-          Rect newBoxRect = calculateNewBoxRect(box);
-          placedBoxes.add(newBoxRect);
-        }
-      }
-    });
-  }
-
-  Rect calculateNewBoxRect(Box box) {
     double containerWidth = 260;
     double containerHeight = 589;
 
-    double newBoxLeft = 0;
-    double newBoxTop = 0;
+    double currentLeft = 0;
+    double currentTop = 0;
+    double maxRowHeight = 0;
 
-    Rect newBoxRect = Rect.fromLTWH(newBoxLeft, newBoxTop, box.width, box.length);
+    for (List<Box> row in widget.result) {
+      for (Box box in row) {
+        double boxWidth = box.width;
+        double boxHeight = box.length;
 
-    while (placedBoxes.any((placedBox) => newBoxRect.overlaps(placedBox))) {
-      newBoxLeft += box.width + 1;
-      if (newBoxLeft + box.width > containerWidth) {
-        newBoxLeft = 0;
-        newBoxTop += placedBoxes.last.bottom - placedBoxes.last.top + 10;
+        // Check if the box fits in the current row
+        if (currentLeft + boxWidth > containerWidth) {
+          // Move to the next row
+          currentLeft = 0;
+          currentTop += maxRowHeight + 1; // Set the vertical gap between rows to 1
+          maxRowHeight = 0;
+        }
+
+        // Check if the box fits in the container vertically
+        if (currentTop + boxHeight > containerHeight) {
+          // Skip placing the box as it doesn't fit in the container
+          continue;
+        }
+
+        // Place the box
+        Rect newBoxRect = Rect.fromLTWH(currentLeft, currentTop, boxWidth, boxHeight);
+        placedBoxes.add(newBoxRect);
+
+        // Update current position and max row height
+        currentLeft += boxWidth + 1; // Set the horizontal gap between boxes to 1
+        maxRowHeight = max(maxRowHeight, boxHeight);
       }
-      newBoxRect = Rect.fromLTWH(newBoxLeft, newBoxTop, box.width, box.length);
     }
+  }
 
-    return newBoxRect;
+  void _clearPlacedBoxes() {
+    setState(() {
+      placedBoxes.clear();
+    });
   }
 
   @override
@@ -145,6 +159,11 @@ class _CalculationScreenState extends State<CalculationScreen> {
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _clearPlacedBoxes, // Add the clear function to the button
+        tooltip: 'Clear Boxes', // Tooltip for the button
+        child: Icon(Icons.clear_all), // Icon for the button
       ),
     );
   }
