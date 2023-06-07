@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.quick_logi.app-mergeDebugResources-14:/values-vi/values-vi.xml",
+            "outputFile": "com.example.quick_logi.app-mergeDebugResources-17:/values-vi/values-vi.xml",
             "map": [
                 {
                     "source": "C:\\Users\\82103\\.gradle\\caches\\transforms-3\\ff69d175c49cfa9394e8ca832c98affc\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-vi\\values.xml",

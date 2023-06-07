@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.quick_logi.app-mergeDebugResources-14:/values-si/values-si.xml",
+            "outputFile": "com.example.quick_logi.app-mergeDebugResources-17:/values-si/values-si.xml",
             "map": [
                 {
                     "source": "C:\\Users\\82103\\.gradle\\caches\\transforms-3\\dc66a9e887fa197d342a9170a296fb1f\\transformed\\core-1.6.0\\res\\values-si\\values-si.xml",

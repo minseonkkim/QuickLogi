@@ -1,14 +1,33 @@
 import 'dart:ui';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
+import 'package:quick_logi/utilities/global.dart';
 
 import '../utilities/constants.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  String? myDeviceToken = '';
+  void getMyDeviceToken() async {
+    myDeviceToken = await FirebaseMessaging.instance.getToken();
+    print("내 디바이스 토큰: $myDeviceToken");
+  }
+
+  @override
+  void initState() {
+    getMyDeviceToken();
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -137,7 +156,21 @@ class HomeScreen extends StatelessWidget {
                           fontFamily: 'PretendardBold',
                           color: Colors.black,
                           fontSize: 18),
-                    )
+                    ),
+                    // ElevatedButton(
+                    //   child: Text(''),
+                    //   onPressed: () {
+                    //     sendNotificationToDevice(
+                    //         deviceToken: myDeviceToken!,
+                    //         title: '테스트알림',
+                    //         content: '내용',
+                    //         data: {
+                    //           'contents_idx': 1,
+                    //           'test_parameter1': '테스트1',
+                    //         });
+                    //   },
+                    // )
+                  
                   ]),
             ),
           ),

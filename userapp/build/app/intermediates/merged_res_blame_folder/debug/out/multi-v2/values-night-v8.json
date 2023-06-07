@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.quick_logi.app-mergeDebugResources-14:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.quick_logi.app-mergeDebugResources-17:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "C:\\flutterapp\\quick_logi\\userapp\\android\\app\\src\\main\\res\\values-night\\styles.xml",
