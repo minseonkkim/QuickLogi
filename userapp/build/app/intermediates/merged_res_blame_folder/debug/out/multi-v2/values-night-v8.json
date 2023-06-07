@@ -1,17 +1,17 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.quick_logi.app-mergeDebugResources-14:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.quick_logi.app-mergeDebugResources-17:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\user\\QuickLogi\\userapp\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\flutterapp\\quick_logi\\userapp\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,18",
                         "startColumns": "4,4",
-                        "startOffsets": "175,1106",
+                        "startOffsets": "172,1094",
                         "endLines": "11,20",
                         "endColumns": "12,12",
-                        "endOffsets": "757,1272"
+                        "endOffsets": "747,1258"
                     },
                     "to": {
                         "startLines": "2,10",

@@ -62,6 +62,8 @@ class RequestListScreen extends StatelessWidget {
         ),
         Expanded(
           child: Container(
+            padding: const EdgeInsets.fromLTRB(13, 18, 13, 18),
+            width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                 topRight: Radius.circular(20.0),
@@ -69,80 +71,80 @@ class RequestListScreen extends StatelessWidget {
               ),
               color: SUBCOLOR1,
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Column(children: [
-                Row(
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        controller.total.value = true;
-                        controller.ing.value = false;
-                        controller.completed.value = false;
-                      },
-                      child: Obx(
-                        () => Text(
-                          '전체',
-                          style: TextStyle(
-                              fontFamily: 'PretendardBold',
-                              color: controller.total.value
-                                  ? Colors.white
-                                  : Colors.white30,
-                              fontSize: 22),
-                        ),
+            child: Column(children: [
+              Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      controller.total.value = true;
+                      controller.ing.value = false;
+                      controller.completed.value = false;
+                    },
+                    child: Obx(
+                      () => Text(
+                        '전체',
+                        style: TextStyle(
+                            fontFamily: 'PretendardBold',
+                            color: controller.total.value
+                                ? Colors.white
+                                : Colors.white30,
+                            fontSize: 22),
                       ),
                     ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        controller.total.value = false;
-                        controller.ing.value = true;
-                        controller.completed.value = false;
-                      },
-                      child: Obx(
-                        () => Text(
-                          '매칭중',
-                          style: TextStyle(
-                              fontFamily: 'PretendardBold',
-                              color: controller.ing.value
-                                  ? Colors.white
-                                  : Colors.white30,
-                              fontSize: 22),
-                        ),
+                  ),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      controller.total.value = false;
+                      controller.ing.value = true;
+                      controller.completed.value = false;
+                    },
+                    child: Obx(
+                      () => Text(
+                        '매칭중',
+                        style: TextStyle(
+                            fontFamily: 'PretendardBold',
+                            color: controller.ing.value
+                                ? Colors.white
+                                : Colors.white30,
+                            fontSize: 22),
                       ),
                     ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        controller.total.value = false;
-                        controller.ing.value = false;
-                        controller.completed.value = true;
-                      },
-                      child: Obx(
-                        () => Text(
-                          '매칭완료',
-                          style: TextStyle(
-                              fontFamily: 'PretendardBold',
-                              color: controller.completed.value
-                                  ? Colors.white
-                                  : Colors.white30,
-                              fontSize: 22),
-                        ),
+                  ),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      controller.total.value = false;
+                      controller.ing.value = false;
+                      controller.completed.value = true;
+                    },
+                    child: Obx(
+                      () => Text(
+                        '매칭완료',
+                        style: TextStyle(
+                            fontFamily: 'PretendardBold',
+                            color: controller.completed.value
+                                ? Colors.white
+                                : Colors.white30,
+                            fontSize: 22),
                       ),
                     ),
-                  ],
-                ),
-                Obx(() => controller.total.value
-                    ? _TotalList()
-                    : controller.ing.value
-                        ? _IngList()
-                        : _CompletedList()),
-              ]),
-            ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Obx(() => controller.total.value
+                  ? _TotalList()
+                  : controller.ing.value
+                      ? _IngList()
+                      : _CompletedList()),
+            ]),
           ),
         ),
       ]),
@@ -156,7 +158,7 @@ class _TotalList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Container(alignment: Alignment.center, child: Text('전체')),
+      child: Column(children: [_RequestBox()]),
     );
   }
 }
@@ -182,5 +184,44 @@ class _CompletedList extends StatelessWidget {
       child: Container(alignment: Alignment.center, child: Text('매칭완료')),
     );
     ;
+  }
+}
+
+class _RequestBox extends StatelessWidget {
+  const _RequestBox({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+          color: Colors.white30, borderRadius: BorderRadius.circular(5)),
+      padding: const EdgeInsets.all(5),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Text(
+          '매칭 중',
+          style:
+              TextStyle(fontFamily: 'PretendardBold', color: RED, fontSize: 20),
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        Text(
+          '출발지: 부산(PUS) / 도착지: 텐진시(TSN)',
+          style: TextStyle(
+              fontFamily: 'Pretendard', color: Colors.black54, fontSize: 16),
+        ),
+        Text(
+          '출고 예정일: 2023.06.20 13:30',
+          style: TextStyle(
+              fontFamily: 'Pretendard', color: Colors.black54, fontSize: 16),
+        ),
+        Text(
+          '화물 정보: 일반화물 DRY 10개 외 1건',
+          style: TextStyle(
+              fontFamily: 'Pretendard', color: Colors.black54, fontSize: 16),
+        ),
+      ]),
+    );
   }
 }

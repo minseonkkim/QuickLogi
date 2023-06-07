@@ -1,14 +1,32 @@
 import 'dart:ui';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 
 import '../utilities/constants.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  String? myDeviceToken = '';
+  void getMyDeviceToken() async {
+    myDeviceToken = await FirebaseMessaging.instance.getToken();
+    print("내 디바이스 토큰: $myDeviceToken");
+  }
+
+  @override
+  void initState() {
+    getMyDeviceToken();
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,11 +53,11 @@ class HomeScreen extends StatelessWidget {
             ),
           ])),
         ),
-        Container(
-          color: LIGHT,
-          width: double.infinity,
-          height: 50,
-        ),
+        // Container(
+        //   color: LIGHT,
+        //   width: double.infinity,
+        //   height: 50,
+        // ),
         SizedBox(
           height: 5,
         ),
@@ -72,7 +90,7 @@ class HomeScreen extends StatelessWidget {
               Text(
                 '운송 정보를 선택하고 지금 바로 견적을 요청해보세요!',
                 style: TextStyle(
-                    fontFamily: 'Pretendard', color: GREY1, fontSize: 15),
+                    fontFamily: 'Pretendard', color: GREY1, fontSize: 16),
               ),
               SizedBox(
                 height: 15,
@@ -127,7 +145,7 @@ class HomeScreen extends StatelessWidget {
                     topLeft: Radius.circular(20),
                     topRight: Radius.circular(20))),
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(10, 13, 10, 13),
+              padding: const EdgeInsets.all(15),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -136,13 +154,69 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyle(
                           fontFamily: 'PretendardBold',
                           color: Colors.black,
-                          fontSize: 18),
-                    )
+                          fontSize: 23),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    // ElevatedButton(
+                    //   child: Text(''),
+                    //   onPressed: () {
+                    //     sendNotificationToDevice();
+                    //   },
+                    // ),
+                    _Notification(
+                        title: '견적 요청이 수락되었습니다.', time: '2023-06-07 23:20'),
+                    _Notification(
+                        title: '견적이 요청되었습니다.', time: '2023-06-07 20:30')
                   ]),
             ),
           ),
         )
       ]),
+    );
+  }
+}
+
+class _Notification extends StatelessWidget {
+  String title, time;
+  _Notification({required this.title, required this.time});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            height: 1.0,
+            width: double.infinity,
+            color: Colors.grey[300],
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            title,
+            style: TextStyle(
+                fontFamily: 'PretendardBold',
+                color: Colors.black,
+                fontSize: 15),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Text(
+            time,
+            style: TextStyle(
+                fontFamily: 'Pretendard', color: Colors.grey, fontSize: 12),
+          ),
+          SizedBox(
+            height: 10,
+          )
+        ],
+      ),
     );
   }
 }
