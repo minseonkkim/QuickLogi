@@ -93,7 +93,7 @@ class _PlaceSelectScreenState extends State<PlaceSelectScreen> {
               ),
               GestureDetector(
                 onTap: () {
-                  Get.toNamed('/PlaceSearchScreen');
+                  Get.toNamed('/SearchScreen');
                 },
                 child: Container(
                   padding: const EdgeInsets.all(13.0),

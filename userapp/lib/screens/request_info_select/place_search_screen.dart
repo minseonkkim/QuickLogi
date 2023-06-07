@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:quick_logi/utilities/constants.dart';
 
@@ -81,6 +82,12 @@ class _PlaceSearchScreenState extends State<PlaceSearchScreen> {
   }
 }
 
+Future<void> getPlaceList() async {
+  final routeFromJsonFile =
+    await rootBundle.loadString('assets/json/place.josn');
+  final data = await json.decode(routeFromJsonFile);
+}
+
 Future<List<SearchList>> fetchSearchList(String word) async {
   try {
     final response = await http.get(Uri.parse(
@@ -113,4 +120,38 @@ class SearchList {
     this.prtEngNm = "",
     this.prtKorNm = "",
   });
+}
+
+class PlaceList {
+  final List<Place>? places;
+  PlaceList({this.places});
+
+  factory PlaceList.fromJson(String jsonString) {
+    List<dynamic> listFromJson = json.decode(jsonString);
+    List<Place> places = <Place>[];
+
+    places = listFromJson.map((place) => Place.fromJson(place)).toList();
+    return PlaceList(places: places);
+  }
+}
+
+class Place {
+  final String ctryCode;
+  final String prtAreaCode;
+  final String prtEngNm;
+  final String prtKorNm;
+
+  Place({
+    this.ctryCode = "",
+    this.prtAreaCode = "",
+    this.prtEngNm = "",
+    this.prtKorNm = "",
+  });
+
+  factory Place.fromJson(Map<String, dynamic> json) => Place(
+    ctryCode: json['ctryCode'],
+    prtAreaCode: json['prtAreaCode'],
+    prtEngNm: json['prtEngNm'],
+    prtKorNm: json['prtKorNm'],
+  );
 }
