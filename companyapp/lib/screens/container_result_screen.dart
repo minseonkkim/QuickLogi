@@ -1,7 +1,6 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/calculation_screen.dart';
+import 'package:flutter_application_1/utilities/components.dart';
 
 class Box {
   double width;
@@ -215,7 +214,7 @@ class _CalculationScreenState extends State<CalculationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Calculation Screen')),
+      appBar: BackTopBar(),
       body: Center(
         child: Container(
           width: 260,
@@ -241,7 +240,7 @@ class _CalculationScreenState extends State<CalculationScreen> {
                       color: colors[Random().nextInt(colors.length)],
                       child: Center(
                         child: Text(
-                          'Box ${i * widget.result[i].length + j + 1}',
+                          'Box ${i * widget.result[i].length + j}',
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
@@ -250,11 +249,6 @@ class _CalculationScreenState extends State<CalculationScreen> {
             ],
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _clearPlacedBoxes, // Add the clear function to the button
-        tooltip: 'Clear Boxes', // Tooltip for the button
-        child: Icon(Icons.clear_all), // Icon for the button
       ),
     );
   }
