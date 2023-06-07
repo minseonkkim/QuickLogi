@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
+import 'package:quick_logi/utilities/global.dart';
 
 import '../utilities/components.dart';
 import '../utilities/constants.dart';
@@ -67,7 +68,10 @@ class _RequestInfoSelectScreenState extends State<RequestInfoSelectScreen> {
       bottomSheet: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            showNotification('견적 요청 완료', '작성하신 견적이 요청되었습니다.');
+            Get.toNamed('/MainScreen');
+          },
           style: ElevatedButton.styleFrom(
             primary: MAINCOLOR,
             minimumSize: Size(double.infinity, 50),
@@ -76,7 +80,7 @@ class _RequestInfoSelectScreenState extends State<RequestInfoSelectScreen> {
             ),
           ),
           child: Text(
-            '다음으로',
+            '요청하기',
             style: TextStyle(
                 fontFamily: 'Pretendard', color: Colors.white, fontSize: 20),
           ),

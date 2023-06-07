@@ -204,7 +204,7 @@ class ProfileScreen extends StatelessWidget {
                       color: GREY1,
                     ),
                     borderRadius: BorderRadius.circular(8)),
-                child: Text('010XXXXXXXX',
+                child: Text('01012345678',
                     style: TextStyle(
                         fontFamily: 'Pretendard',
                         color: Colors.black,
