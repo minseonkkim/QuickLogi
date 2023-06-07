@@ -160,19 +160,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(
                       height: 10,
                     ),
-                    // ElevatedButton(
-                    //   child: Text(''),
-                    //   onPressed: () {
-                    //     sendNotificationToDevice(
-                    //         deviceToken: myDeviceToken!,
-                    //         title: '테스트알림',
-                    //         content: '내용',
-                    //         data: {
-                    //           'contents_idx': 1,
-                    //           'test_parameter1': '테스트1',
-                    //         });
-                    //   },
-                    // )
+                    ElevatedButton(
+                      child: Text(''),
+                      onPressed: () {
+                        sendNotificationToDevice();
+                      },
+                    ),
                     Notification()
                   ]),
             ),

@@ -147,31 +147,11 @@ class FreightInfoForm extends StatefulWidget {
 }
 
 class _FreightInfoFormState extends State<FreightInfoForm> {
-  final _typeList = [
-    '타입',
-    'Pallets',
-    'Boxes',
-    'Cartons',
-    'Crates',
-    'Drums',
-    'Bags',
-    'Bales',
-    'Bundles',
-    'Cans',
-    'Carboys',
-    'Carpets',
-    'Cases',
-    'Coils',
-    'Cylinders',
-    'Loose',
-    'Pails',
-    'Reels',
-    'Rolls',
-    'Tubes',
-    'Pipes',
-    'Other'
-  ];
-  String? _selectedType = '타입';
+  final _itemList = ['일반화물', '냉동냉장', '화학제품류', '위험물', '공컨테이너', '기타'];
+  String? _selectedItem = '일반화물';
+
+  final _typeList = ['DRY', 'REEFER', 'TANK', '기타'];
+  String? _selectedType = 'DRY';
 
   final _lengthUnit = ['m', 'cm', 'mm'];
   String? _selectedLengthUnit = 'm';
@@ -267,6 +247,39 @@ class _FreightInfoFormState extends State<FreightInfoForm> {
                   padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
                   child: DropdownButton(
                       dropdownColor: GREY2,
+                      value: _selectedItem,
+                      items: _itemList.map((value) {
+                        return DropdownMenuItem(
+                          child: Text(
+                            value,
+                            style: TextStyle(
+                                fontFamily: 'Pretendard',
+                                color: Colors.black,
+                                fontSize: 18),
+                          ),
+                          value: value,
+                        );
+                      }).toList(),
+                      onChanged: (value) {
+                        setState(() {
+                          _selectedItem = value;
+                        });
+                      }),
+                ),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              DecoratedBox(
+                decoration: BoxDecoration(
+                  color: GREY2,
+                  border: Border.all(color: Colors.black38, width: 1),
+                  borderRadius: BorderRadius.circular(3),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
+                  child: DropdownButton(
+                      dropdownColor: GREY2,
                       value: _selectedType,
                       items: _typeList.map((value) {
                         return DropdownMenuItem(
@@ -287,22 +300,6 @@ class _FreightInfoFormState extends State<FreightInfoForm> {
                       }),
                 ),
               ),
-              SizedBox(
-                width: 10,
-              ),
-              Container(
-                width: 120,
-                child: TextField(
-                    controller: controllers[0],
-                    keyboardType: TextInputType.number,
-                    inputFormatters: [
-                      FilteringTextInputFormatter.allow(RegExp('[0-9]'))
-                    ],
-                    decoration: InputDecoration(
-                        hintText: '수량',
-                        border: OutlineInputBorder(),
-                        contentPadding: EdgeInsets.all(3))),
-              )
             ],
           ),
           SizedBox(
@@ -417,6 +414,22 @@ class _FreightInfoFormState extends State<FreightInfoForm> {
                     fontFamily: 'Pretendard',
                     color: Colors.black,
                     fontSize: 18),
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Container(
+                width: 120,
+                child: TextField(
+                    controller: controllers[0],
+                    keyboardType: TextInputType.number,
+                    inputFormatters: [
+                      FilteringTextInputFormatter.allow(RegExp('[0-9]'))
+                    ],
+                    decoration: InputDecoration(
+                        hintText: '수량',
+                        border: OutlineInputBorder(),
+                        contentPadding: EdgeInsets.all(3))),
               )
             ],
           )
