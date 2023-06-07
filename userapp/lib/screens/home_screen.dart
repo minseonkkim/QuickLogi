@@ -54,11 +54,11 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ])),
         ),
-        Container(
-          color: LIGHT,
-          width: double.infinity,
-          height: 50,
-        ),
+        // Container(
+        //   color: LIGHT,
+        //   width: double.infinity,
+        //   height: 50,
+        // ),
         SizedBox(
           height: 5,
         ),
@@ -155,7 +155,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: TextStyle(
                           fontFamily: 'PretendardBold',
                           color: Colors.black,
-                          fontSize: 18),
+                          fontSize: 20),
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                     // ElevatedButton(
                     //   child: Text(''),
@@ -170,12 +173,32 @@ class _HomeScreenState extends State<HomeScreen> {
                     //         });
                     //   },
                     // )
-                  
+                    Notification()
                   ]),
             ),
           ),
         )
       ]),
+    );
+  }
+}
+
+class Notification extends StatelessWidget {
+  const Notification({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(5),
+      child: Column(
+        children: [
+          Text(
+            '견적이 요청되었습니다.',
+            style: TextStyle(
+                fontFamily: 'Pretendard', color: Colors.black, fontSize: 15),
+          )
+        ],
+      ),
     );
   }
 }
