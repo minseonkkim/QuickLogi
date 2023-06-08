@@ -6,7 +6,7 @@ import 'package:quick_logi/utilities/components.dart';
 import 'package:quick_logi/utilities/constants.dart';
 
 class PlaceSelectScreen extends StatefulWidget {
-  final List<String> startlist = ['군산', '목포'];
+  final List<String> startlist = ['군산', '목포', '부산'];
   final List<String> endlist = ['부산', '포항'];
 
   @override
@@ -15,7 +15,7 @@ class PlaceSelectScreen extends StatefulWidget {
 
 class _PlaceSelectScreenState extends State<PlaceSelectScreen> {
   var _startPlace;
-  var _endPlace = Get.arguments;
+  var _endPlace;
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +70,8 @@ class _PlaceSelectScreenState extends State<PlaceSelectScreen> {
               GestureDetector(
                 onTap: () async {
                   _startPlace = await showSearch(
-                      context: context, delegate: Search(widget.startlist));
+                      context: context,
+                      delegate: StartSearch(widget.startlist));
                   setState(() {});
                 },
                 child: Container(
@@ -101,7 +102,8 @@ class _PlaceSelectScreenState extends State<PlaceSelectScreen> {
               GestureDetector(
                 onTap: () async {
                   _endPlace = await showSearch(
-                      context: context, delegate: Search(widget.endlist));
+                      context: context, delegate: EndSearch(widget.endlist));
+
                   setState(() {});
                 },
                 child: Container(
@@ -133,7 +135,9 @@ class _PlaceSelectScreenState extends State<PlaceSelectScreen> {
         child: ElevatedButton(
           onPressed: () {
             // 입력받은 정보 이전 페이지로 전달
-            Get.back();
+            Get.back(
+                result:
+                    '출발지 : ' + '${_startPlace}' + '\n도착지 : ' + '${_endPlace}');
           },
           style: ElevatedButton.styleFrom(
             primary: MAINCOLOR,
