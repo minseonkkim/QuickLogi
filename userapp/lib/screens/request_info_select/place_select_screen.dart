@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:quick_logi/screens/request_info_select/search_screen.dart';
 import 'package:quick_logi/utilities/components.dart';
 import 'package:quick_logi/utilities/constants.dart';
 
@@ -12,6 +13,9 @@ class PlaceSelectScreen extends StatefulWidget {
 }
 
 class _PlaceSelectScreenState extends State<PlaceSelectScreen> {
+  String? _startPlace;
+  String? _endPlace;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,8 +67,11 @@ class _PlaceSelectScreenState extends State<PlaceSelectScreen> {
                 height: 25,
               ),
               GestureDetector(
-                onTap: () {
-                  Get.toNamed('/PlaceSearchScreen');
+                onTap: () async{
+                  _startPlace = await Get.toNamed('/PlaceSearchScreen');
+                  setState(() {
+                    
+                  });
                 },
                 child: Container(
                   padding: const EdgeInsets.all(13.0),
@@ -81,7 +88,8 @@ class _PlaceSelectScreenState extends State<PlaceSelectScreen> {
                       width: 10,
                     ),
                     Text(
-                      '출발지 입력하기',
+                      _startPlace == null?
+                      '출발지 입력하기': '${_startPlace}',
                       style: TextStyle(
                           fontFamily: 'Pretendard', color: GREY1, fontSize: 22),
                     )
@@ -92,8 +100,11 @@ class _PlaceSelectScreenState extends State<PlaceSelectScreen> {
                 height: 13,
               ),
               GestureDetector(
-                onTap: () {
-                  Get.toNamed('/SearchScreen');
+                onTap: () async {
+                  _endPlace = await Get.toNamed('/PlaceSearchScreen');
+                  setState(() {
+                    
+                  });
                 },
                 child: Container(
                   padding: const EdgeInsets.all(13.0),
@@ -110,7 +121,8 @@ class _PlaceSelectScreenState extends State<PlaceSelectScreen> {
                       width: 10,
                     ),
                     Text(
-                      '도착지 입력하기',
+                      _endPlace == null?
+                      '도착지 입력하기': '${_endPlace}',
                       style: TextStyle(
                           fontFamily: 'Pretendard', color: GREY1, fontSize: 22),
                     )

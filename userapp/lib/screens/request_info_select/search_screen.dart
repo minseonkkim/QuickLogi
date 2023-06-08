@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SearchScreen extends StatefulWidget {
-  final List<String> list = List.generate(10, (index) => "Text $index");
+  final List<String> list = ['부산', '포항'];
 
   @override
   _SearchScreenState createState() => _SearchScreenState();
@@ -96,6 +97,9 @@ class Search extends SearchDelegate {
           onTap: (){
             selectedResult = suggestionList[index];
             showResults(context);
+            // 이전 화면으로 보내기
+            Get.toNamed('/PlaceSelectScreen',
+                arguments: '${selectedResult}');
           },
         );
       },
