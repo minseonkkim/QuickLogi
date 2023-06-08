@@ -165,10 +165,6 @@ class _MyAppState extends State<MyApp> {
           page: () => PlaceSearchScreen(),
         ),
         GetPage(
-          name: '/SearchScreen',
-          page: () => SearchScreen(),
-        ),
-        GetPage(
           name: '/DateSelectScreen',
           page: () => DateSelectScreen(),
         ),

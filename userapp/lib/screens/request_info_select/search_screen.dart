@@ -1,40 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class SearchScreen extends StatefulWidget {
-  final List<String> list = List.generate(10, (index) => "Text $index");
+// class SearchScreen extends StatefulWidget {
+//   final List<String> list = ['부산', '포항'];
 
-  @override
-  _SearchScreenState createState() => _SearchScreenState();
-}
+//   @override
+//   _SearchScreenState createState() => _SearchScreenState();
+// }
 
-class _SearchScreenState extends State<SearchScreen> {
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        actions: <Widget>[
-          IconButton(
-            onPressed: () {
-              showSearch(context: context, delegate: Search(widget.list));
-            },
-            icon: Icon(Icons.search),
-          )
-        ],
-        centerTitle: true,
-        title: Text('Search Bar'),
-      ),
-      body: ListView.builder(
-        itemCount: widget.list.length,
-        itemBuilder: (context, index) => ListTile(
-          title: Text(
-            widget.list[index],
-          ),
-        ),
-      ),
-    );
-  }
-}
+// class _SearchScreenState extends State<SearchScreen> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         actions: <Widget>[
+//           IconButton(
+//             onPressed: () {
+//               showSearch(context: context, delegate: Search(widget.list));
+//             },
+//             icon: Icon(Icons.search),
+//           )
+//         ],
+//         centerTitle: true,
+//         title: Text('Search Bar'),
+//       ),
+//       body: ListView.builder(
+//         itemCount: widget.list.length,
+//         itemBuilder: (context, index) => ListTile(
+//           title: Text(
+//             widget.list[index],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 class Search extends SearchDelegate {
   @override
@@ -93,13 +93,16 @@ class Search extends SearchDelegate {
             suggestionList[index],
           ),
           leading: query.isEmpty ? Icon(Icons.access_time) : SizedBox(),
-          onTap: (){
+          onTap: () {
             selectedResult = suggestionList[index];
             showResults(context);
+            // 이전 화면으로 보내기
+
+            Get.offAndToNamed('/PlaceSelectScreen',
+                arguments: '${selectedResult}');
           },
         );
       },
     );
   }
 }
-
