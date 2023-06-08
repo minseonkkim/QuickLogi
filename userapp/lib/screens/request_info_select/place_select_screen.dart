@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
-import 'package:quick_logi/screens/request_info_select/search_screen.dart';
+import 'package:quick_logi/screens/request_info_select/place_search.dart';
 import 'package:quick_logi/utilities/components.dart';
 import 'package:quick_logi/utilities/constants.dart';
 
