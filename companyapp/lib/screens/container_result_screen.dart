@@ -178,6 +178,7 @@ class CalculationScreen extends StatefulWidget {
 }
 
 class _CalculationScreenState extends State<CalculationScreen> {
+  
   List<Color> colors = [
     Colors.red,
     Colors.blue,
