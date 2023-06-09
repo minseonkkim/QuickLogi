@@ -21,7 +21,7 @@ class _MainScreenState extends State<MainScreen> {
 
   final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    RequestListScreen(),
+    //RequestListScreen(),
     ProfileScreen()
   ];
 
@@ -47,19 +47,19 @@ class _MainScreenState extends State<MainScreen> {
                     )
                   : Icon(Icons.home_outlined, color: Colors.black),
               label: '홈'),
+          // BottomNavigationBarItem(
+          //     icon: _selectedIndex == 1
+          //         ? Icon(
+          //             Icons.list_alt_outlined,
+          //             color: MAINCOLOR,
+          //           )
+          //         : Icon(
+          //             Icons.list,
+          //             color: Colors.black,
+          //           ),
+          //     label: '요청목록'),
           BottomNavigationBarItem(
               icon: _selectedIndex == 1
-                  ? Icon(
-                      Icons.list_alt_outlined,
-                      color: MAINCOLOR,
-                    )
-                  : Icon(
-                      Icons.list,
-                      color: Colors.black,
-                    ),
-              label: '요청목록'),
-          BottomNavigationBarItem(
-              icon: _selectedIndex == 2
                   ? Icon(Icons.person, color: MAINCOLOR)
                   : Icon(
                       Icons.person_outline,

@@ -9,9 +9,23 @@ import 'package:get/get.dart';
 import '../utilities/constants.dart';
 
 List<dynamic> notificationList = [
-  RequestNotificationBox(title: '견적이 요청되었습니다.', time: '2023-06-07 20:30'),
-  RespondNotificationBox(title: '견적 요청이 수락되었습니다.', time: '2023-06-07 23:20'),
-  RequestNotificationBox(title: '견적이 요청되었습니다.', time: '2023-06-07 20:30')
+  RespondNotificationBox(
+      title: '견적 요청이 수락되었습니다.',
+      time: '2023-06-07 23:20',
+      start: '부산(KRPUS)',
+      end: 'Penglai(CNPLA)',
+      date: '2023.08.02 (20:00)',
+      freight: '일반화물 10개 외 1건',
+      sign: '수락',
+      company: '블라'),
+  RequestNotificationBox(
+    title: '견적이 요청되었습니다.',
+    time: '2023-06-07 20:30',
+    start: '부산(KRPUS)',
+    end: 'Penglai(CNPLA)',
+    date: '2023.08.02 (20:00)',
+    freight: '일반화물 10개 외 1건',
+  )
 ];
 
 class HomeScreen extends StatefulWidget {
@@ -58,14 +72,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontSize: 38),
             ),
           ])),
-        ),
-        // Container(
-        //   color: LIGHT,
-        //   width: double.infinity,
-        //   height: 50,
-        // ),
-        SizedBox(
-          height: 5,
         ),
         Padding(
           padding: const EdgeInsets.all(10.0),
@@ -185,8 +191,14 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class RequestNotificationBox extends StatelessWidget {
-  String title, time;
-  RequestNotificationBox({required this.title, required this.time});
+  String title, time, start, end, date, freight;
+  RequestNotificationBox(
+      {required this.title,
+      required this.time,
+      required this.start,
+      required this.end,
+      required this.date,
+      required this.freight});
 
   @override
   Widget build(BuildContext context) {
@@ -227,18 +239,18 @@ class RequestNotificationBox extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          '부산(KRPUS)',
+                          start,
                           style: TextStyle(
                               fontFamily: 'Pretendard',
                               color: Colors.black,
-                              fontSize: 15.5),
+                              fontSize: 16),
                         ),
                         Text(
-                          'Penglai(CNPLA)',
+                          end,
                           style: TextStyle(
                               fontFamily: 'Pretendard',
                               color: Colors.black,
-                              fontSize: 15.5),
+                              fontSize: 16),
                         )
                       ],
                     ),
@@ -246,7 +258,7 @@ class RequestNotificationBox extends StatelessWidget {
                 ]),
                 Container(
                   decoration: BoxDecoration(
-                      color: Colors.grey[300],
+                      color: Colors.grey[350],
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(10),
                           bottomRight: Radius.circular(10))),
@@ -270,7 +282,7 @@ class RequestNotificationBox extends StatelessWidget {
                               height: 5,
                             ),
                             Text(
-                              '2023.06.10 (22:00)',
+                              date,
                               style: TextStyle(
                                   fontFamily: 'Pretendard',
                                   color: Colors.black,
@@ -294,7 +306,7 @@ class RequestNotificationBox extends StatelessWidget {
                               height: 5,
                             ),
                             Text(
-                              '일반화물 10개 외 1건',
+                              freight,
                               style: TextStyle(
                                   fontFamily: 'Pretendard',
                                   color: Colors.black,
@@ -316,7 +328,7 @@ class RequestNotificationBox extends StatelessWidget {
             time,
             style: TextStyle(
                 fontFamily: 'Pretendard',
-                color: Colors.grey[400],
+                color: Colors.grey[500],
                 fontSize: 12),
           ),
           SizedBox(
@@ -329,8 +341,16 @@ class RequestNotificationBox extends StatelessWidget {
 }
 
 class RespondNotificationBox extends StatelessWidget {
-  String title, time;
-  RespondNotificationBox({required this.title, required this.time});
+  String title, time, start, end, date, freight, sign, company;
+  RespondNotificationBox(
+      {required this.title,
+      required this.time,
+      required this.start,
+      required this.end,
+      required this.date,
+      required this.freight,
+      required this.sign,
+      required this.company});
 
   @override
   Widget build(BuildContext context) {
@@ -371,18 +391,18 @@ class RespondNotificationBox extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          '부산(KRPUS)',
+                          start,
                           style: TextStyle(
                               fontFamily: 'Pretendard',
                               color: Colors.black,
-                              fontSize: 15.5),
+                              fontSize: 16),
                         ),
                         Text(
-                          'Penglai(CNPLA)',
+                          end,
                           style: TextStyle(
                               fontFamily: 'Pretendard',
                               color: Colors.black,
-                              fontSize: 15.5),
+                              fontSize: 16),
                         )
                       ],
                     ),
@@ -390,7 +410,7 @@ class RespondNotificationBox extends StatelessWidget {
                 ]),
                 Container(
                   decoration: BoxDecoration(
-                      color: Colors.grey[300],
+                      color: Colors.grey[350],
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(10),
                           bottomRight: Radius.circular(10))),
@@ -416,7 +436,7 @@ class RespondNotificationBox extends StatelessWidget {
                                   height: 5,
                                 ),
                                 Text(
-                                  '2023.06.10 (22:00)',
+                                  date,
                                   style: TextStyle(
                                       fontFamily: 'Pretendard',
                                       color: Colors.black,
@@ -440,7 +460,7 @@ class RespondNotificationBox extends StatelessWidget {
                                   height: 5,
                                 ),
                                 Text(
-                                  '일반화물 10개 외 1건',
+                                  freight,
                                   style: TextStyle(
                                       fontFamily: 'Pretendard',
                                       color: Colors.black,
@@ -471,10 +491,10 @@ class RespondNotificationBox extends StatelessWidget {
                                   height: 5,
                                 ),
                                 Text(
-                                  '수락',
+                                  sign,
                                   style: TextStyle(
                                       fontFamily: 'Pretendard',
-                                      color: Colors.black,
+                                      color: Colors.red[800],
                                       fontSize: 14),
                                 )
                               ],
@@ -495,7 +515,7 @@ class RespondNotificationBox extends StatelessWidget {
                                   height: 5,
                                 ),
                                 Text(
-                                  '블라블라',
+                                  company,
                                   style: TextStyle(
                                       fontFamily: 'Pretendard',
                                       color: Colors.black,
@@ -519,7 +539,7 @@ class RespondNotificationBox extends StatelessWidget {
             time,
             style: TextStyle(
                 fontFamily: 'Pretendard',
-                color: Colors.grey[400],
+                color: Colors.grey[500],
                 fontSize: 12),
           ),
           SizedBox(

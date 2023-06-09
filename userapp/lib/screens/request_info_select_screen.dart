@@ -75,6 +75,10 @@ class _RequestInfoSelectScreenState extends State<RequestInfoSelectScreen> {
                 RequestNotificationBox(
                   title: '견적이 요청되었습니다.',
                   time: DateTime.now().toString().substring(0, 16),
+                  start: '부산(KRPUS)',
+                  end: 'Penglai(CNPLA)',
+                  date: '2023.08.02 (20:00)',
+                  freight: '일반화물 10개 외 1건',
                 ));
             showNotification('견적 요청 완료', '작성하신 견적이 요청되었습니다.');
             Get.toNamed('/MainScreen');
