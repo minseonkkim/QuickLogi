@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
-import 'package:quick_logi/utilities/global.dart';
+import 'package:quick_logi/screens/home_screen.dart';
+import 'package:quick_logi/utilities/notification.dart';
 
 import '../utilities/components.dart';
 import '../utilities/constants.dart';
@@ -69,6 +70,11 @@ class _RequestInfoSelectScreenState extends State<RequestInfoSelectScreen> {
         padding: const EdgeInsets.all(10.0),
         child: ElevatedButton(
           onPressed: () {
+            notificationList.insert(
+                0,
+                NotificationBox(
+                    title: '견적이 요청되었습니다.',
+                    time: DateTime.now().toString().substring(0, 16)));
             showNotification('견적 요청 완료', '작성하신 견적이 요청되었습니다.');
             Get.toNamed('/MainScreen');
           },

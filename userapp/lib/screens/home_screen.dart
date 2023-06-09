@@ -8,6 +8,11 @@ import 'package:get/get.dart';
 
 import '../utilities/constants.dart';
 
+List<NotificationBox> notificationList = [
+  NotificationBox(title: '견적 요청이 수락되었습니다.', time: '2023-06-07 23:20'),
+  NotificationBox(title: '견적이 요청되었습니다.', time: '2023-06-07 20:30')
+];
+
 class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -159,16 +164,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(
                       height: 10,
                     ),
-                    // ElevatedButton(
-                    //   child: Text(''),
-                    //   onPressed: () {
-                    //     sendNotificationToDevice();
-                    //   },
-                    // ),
-                    _Notification(
-                        title: '견적 요청이 수락되었습니다.', time: '2023-06-07 23:20'),
-                    _Notification(
-                        title: '견적이 요청되었습니다.', time: '2023-06-07 20:30')
+                    ListView.builder(
+                      physics: ScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: notificationList.length,
+                      itemBuilder: (context, index) {
+                        return notificationList[index];
+                      },
+                    ),
                   ]),
             ),
           ),
@@ -178,9 +181,9 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class _Notification extends StatelessWidget {
+class NotificationBox extends StatelessWidget {
   String title, time;
-  _Notification({required this.title, required this.time});
+  NotificationBox({required this.title, required this.time});
 
   @override
   Widget build(BuildContext context) {
