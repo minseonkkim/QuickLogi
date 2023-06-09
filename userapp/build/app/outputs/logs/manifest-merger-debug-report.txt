@@ -81,6 +81,7 @@ INJECTED from C:\flutterapp\quick_logi\userapp\android\app\src\main\AndroidManif
 INJECTED from C:\flutterapp\quick_logi\userapp\android\app\src\main\AndroidManifest.xml:1:1-49:12
 INJECTED from C:\flutterapp\quick_logi\userapp\android\app\src\main\AndroidManifest.xml:1:1-49:12
 MERGED from C:\flutterapp\quick_logi\userapp\android\app\src\main\AndroidManifest.xml:1:1-49:12
+MERGED from [:shared_preferences_android] C:\flutterapp\quick_logi\userapp\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:firebase_auth] C:\flutterapp\quick_logi\userapp\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
 MERGED from [:cloud_firestore] C:\flutterapp\quick_logi\userapp\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
 MERGED from [:firebase_messaging] C:\flutterapp\quick_logi\userapp\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-50:12
@@ -239,6 +240,8 @@ uses-sdk
 INJECTED from C:\flutterapp\quick_logi\userapp\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\flutterapp\quick_logi\userapp\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\flutterapp\quick_logi\userapp\android\app\src\main\AndroidManifest.xml
+MERGED from [:shared_preferences_android] C:\flutterapp\quick_logi\userapp\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:shared_preferences_android] C:\flutterapp\quick_logi\userapp\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:firebase_auth] C:\flutterapp\quick_logi\userapp\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:firebase_auth] C:\flutterapp\quick_logi\userapp\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:cloud_firestore] C:\flutterapp\quick_logi\userapp\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41

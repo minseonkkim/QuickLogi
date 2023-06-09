@@ -8,9 +8,10 @@ import 'package:get/get.dart';
 
 import '../utilities/constants.dart';
 
-List<NotificationBox> notificationList = [
-  NotificationBox(title: '견적 요청이 수락되었습니다.', time: '2023-06-07 23:20'),
-  NotificationBox(title: '견적이 요청되었습니다.', time: '2023-06-07 20:30')
+List<dynamic> notificationList = [
+  RequestNotificationBox(title: '견적이 요청되었습니다.', time: '2023-06-07 20:30'),
+  RespondNotificationBox(title: '견적 요청이 수락되었습니다.', time: '2023-06-07 23:20'),
+  RequestNotificationBox(title: '견적이 요청되었습니다.', time: '2023-06-07 20:30')
 ];
 
 class HomeScreen extends StatefulWidget {
@@ -145,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Container(
             width: double.infinity,
             decoration: BoxDecoration(
-                color: GREY2,
+                color: LIGHT,
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20),
                     topRight: Radius.circular(20))),
@@ -164,13 +165,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(
                       height: 10,
                     ),
-                    ListView.builder(
-                      physics: ScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: notificationList.length,
-                      itemBuilder: (context, index) {
-                        return notificationList[index];
-                      },
+                    Expanded(
+                      child: ListView.builder(
+                        physics: ScrollPhysics(),
+                        shrinkWrap: true,
+                        itemCount: notificationList.length,
+                        itemBuilder: (context, index) {
+                          return notificationList[index];
+                        },
+                      ),
                     ),
                   ]),
             ),
@@ -181,9 +184,9 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class NotificationBox extends StatelessWidget {
+class RequestNotificationBox extends StatelessWidget {
   String title, time;
-  NotificationBox({required this.title, required this.time});
+  RequestNotificationBox({required this.title, required this.time});
 
   @override
   Widget build(BuildContext context) {
@@ -192,11 +195,6 @@ class NotificationBox extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            height: 1.0,
-            width: double.infinity,
-            color: Colors.grey[300],
-          ),
           SizedBox(
             height: 10,
           ),
@@ -205,7 +203,111 @@ class NotificationBox extends StatelessWidget {
             style: TextStyle(
                 fontFamily: 'PretendardBold',
                 color: Colors.black,
-                fontSize: 15),
+                fontSize: 16),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+                color: Colors.white60, borderRadius: BorderRadius.circular(10)),
+            child: Column(
+              children: [
+                Row(children: [
+                  Container(
+                      margin: const EdgeInsets.all(12),
+                      height: 60,
+                      child: Image.asset('assets/images/place_arrow.png')),
+                  Container(
+                    margin: const EdgeInsets.all(10),
+                    height: 60,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '부산(KRPUS)',
+                          style: TextStyle(
+                              fontFamily: 'Pretendard',
+                              color: Colors.black,
+                              fontSize: 15.5),
+                        ),
+                        Text(
+                          'Penglai(CNPLA)',
+                          style: TextStyle(
+                              fontFamily: 'Pretendard',
+                              color: Colors.black,
+                              fontSize: 15.5),
+                        )
+                      ],
+                    ),
+                  )
+                ]),
+                Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10))),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(6),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              '운송일시',
+                              style: TextStyle(
+                                  fontFamily: 'Pretendard',
+                                  color: Colors.grey[700],
+                                  fontSize: 13.5),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              '2023.06.10 (22:00)',
+                              style: TextStyle(
+                                  fontFamily: 'Pretendard',
+                                  color: Colors.black,
+                                  fontSize: 14),
+                            )
+                          ],
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(6),
+                        child: Column(
+                          children: [
+                            Text(
+                              '화물정보',
+                              style: TextStyle(
+                                  fontFamily: 'Pretendard',
+                                  color: Colors.grey[700],
+                                  fontSize: 13.5),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              '일반화물 10개 외 1건',
+                              style: TextStyle(
+                                  fontFamily: 'Pretendard',
+                                  color: Colors.black,
+                                  fontSize: 14),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
           SizedBox(
             height: 5,
@@ -213,7 +315,212 @@ class NotificationBox extends StatelessWidget {
           Text(
             time,
             style: TextStyle(
-                fontFamily: 'Pretendard', color: Colors.grey, fontSize: 12),
+                fontFamily: 'Pretendard',
+                color: Colors.grey[400],
+                fontSize: 12),
+          ),
+          SizedBox(
+            height: 10,
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class RespondNotificationBox extends StatelessWidget {
+  String title, time;
+  RespondNotificationBox({required this.title, required this.time});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            title,
+            style: TextStyle(
+                fontFamily: 'PretendardBold',
+                color: Colors.black,
+                fontSize: 16),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+                color: Colors.white60, borderRadius: BorderRadius.circular(10)),
+            child: Column(
+              children: [
+                Row(children: [
+                  Container(
+                      margin: const EdgeInsets.all(12),
+                      height: 60,
+                      child: Image.asset('assets/images/place_arrow.png')),
+                  Container(
+                    margin: const EdgeInsets.all(10),
+                    height: 60,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '부산(KRPUS)',
+                          style: TextStyle(
+                              fontFamily: 'Pretendard',
+                              color: Colors.black,
+                              fontSize: 15.5),
+                        ),
+                        Text(
+                          'Penglai(CNPLA)',
+                          style: TextStyle(
+                              fontFamily: 'Pretendard',
+                              color: Colors.black,
+                              fontSize: 15.5),
+                        )
+                      ],
+                    ),
+                  )
+                ]),
+                Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10))),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(6),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  '운송일시',
+                                  style: TextStyle(
+                                      fontFamily: 'Pretendard',
+                                      color: Colors.grey[700],
+                                      fontSize: 13.5),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  '2023.06.10 (22:00)',
+                                  style: TextStyle(
+                                      fontFamily: 'Pretendard',
+                                      color: Colors.black,
+                                      fontSize: 14),
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.all(6),
+                            child: Column(
+                              children: [
+                                Text(
+                                  '화물정보',
+                                  style: TextStyle(
+                                      fontFamily: 'Pretendard',
+                                      color: Colors.grey[700],
+                                      fontSize: 13.5),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  '일반화물 10개 외 1건',
+                                  style: TextStyle(
+                                      fontFamily: 'Pretendard',
+                                      color: Colors.black,
+                                      fontSize: 14),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(6),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  '수락여부',
+                                  style: TextStyle(
+                                      fontFamily: 'Pretendard',
+                                      color: Colors.grey[700],
+                                      fontSize: 13.5),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  '수락',
+                                  style: TextStyle(
+                                      fontFamily: 'Pretendard',
+                                      color: Colors.black,
+                                      fontSize: 14),
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.all(6),
+                            child: Column(
+                              children: [
+                                Text(
+                                  '회사명',
+                                  style: TextStyle(
+                                      fontFamily: 'Pretendard',
+                                      color: Colors.grey[700],
+                                      fontSize: 13.5),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  '블라블라',
+                                  style: TextStyle(
+                                      fontFamily: 'Pretendard',
+                                      color: Colors.black,
+                                      fontSize: 14),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Text(
+            time,
+            style: TextStyle(
+                fontFamily: 'Pretendard',
+                color: Colors.grey[400],
+                fontSize: 12),
           ),
           SizedBox(
             height: 10,

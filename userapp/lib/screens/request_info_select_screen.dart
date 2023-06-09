@@ -72,9 +72,10 @@ class _RequestInfoSelectScreenState extends State<RequestInfoSelectScreen> {
           onPressed: () {
             notificationList.insert(
                 0,
-                NotificationBox(
-                    title: '견적이 요청되었습니다.',
-                    time: DateTime.now().toString().substring(0, 16)));
+                RequestNotificationBox(
+                  title: '견적이 요청되었습니다.',
+                  time: DateTime.now().toString().substring(0, 16),
+                ));
             showNotification('견적 요청 완료', '작성하신 견적이 요청되었습니다.');
             Get.toNamed('/MainScreen');
           },
