@@ -2,29 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:quick_logi/models/FreightInfo.dart';
 import 'package:quick_logi/utilities/components.dart';
 import 'package:quick_logi/utilities/constants.dart';
-
-class FreightInfo {
-  String? item;
-  String? type;
-  String? width;
-  String? length;
-  String? height;
-  String? unit;
-  String? weight;
-  String? num;
-
-  FreightInfo(
-      {required this.item,
-      required this.type,
-      required this.width,
-      required this.length,
-      required this.height,
-      required this.unit,
-      required this.weight,
-      required this.num});
-}
 
 int freightIndex = 1;
 
@@ -48,12 +28,6 @@ class FreightSelectScreen extends StatefulWidget {
 }
 
 class _FreightSelectScreenState extends State<FreightSelectScreen> {
-  // void removeFreightInfoForm(int name) {
-  //   setState(() {
-  //     freightList.removeWhere((form) => form.name == name);
-  //   });
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -202,39 +176,8 @@ class FreightInfoForm extends StatefulWidget {
 
 class _FreightInfoFormState extends State<FreightInfoForm> {
   final _itemList = ['일반화물', '냉동냉장', '화학제품류', '위험물', '공컨테이너', '기타'];
-  // String? _selectedItem = '일반화물';
-
   final _typeList = ['DRY', 'REEFER', 'TANK', '기타'];
-  //String? _selectedType = 'DRY';
-
   final _lengthUnit = ['m', 'cm', 'mm'];
-  //String? _selectedLengthUnit = 'm';
-
-  List<TextEditingController> controllers = <TextEditingController>[
-    TextEditingController(),
-    TextEditingController(),
-    TextEditingController(),
-    TextEditingController(),
-    TextEditingController(),
-  ];
-
-  // void _removeController() {
-  //   for (var controller in controllers) {
-  //     controller.dispose();
-  //   }
-  //   controllers.clear(); // 컨트롤러 리스트 초기화
-  // }
-
-  // void removeForm() {
-  //   _FreightSelectScreenState? parent =
-  //       context.findAncestorStateOfType<_FreightSelectScreenState>();
-
-  //   if (freightList.length > 1) {
-  //     freightList.removeWhere((form) => form.name == widget.name);
-  //     _removeController();
-  //     parent!.setState(() {});
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -360,7 +303,6 @@ class _FreightInfoFormState extends State<FreightInfoForm> {
             Container(
               width: 70,
               child: TextField(
-                  controller: controllers[1],
                   onChanged: (value) {
                     freightList[widget.name].width = value;
                   },
@@ -379,7 +321,6 @@ class _FreightInfoFormState extends State<FreightInfoForm> {
             Container(
               width: 70,
               child: TextField(
-                  controller: controllers[2],
                   onChanged: (value) {
                     freightList[widget.name].length = value;
                   },
@@ -398,7 +339,6 @@ class _FreightInfoFormState extends State<FreightInfoForm> {
             Container(
               width: 70,
               child: TextField(
-                  controller: controllers[3],
                   onChanged: (value) {
                     freightList[widget.name].height = value;
                   },
@@ -454,7 +394,6 @@ class _FreightInfoFormState extends State<FreightInfoForm> {
             Container(
               width: 100,
               child: TextField(
-                  controller: controllers[4],
                   onChanged: (value) {
                     freightList[widget.name].weight = value;
                   },
@@ -481,7 +420,6 @@ class _FreightInfoFormState extends State<FreightInfoForm> {
             Container(
               width: 120,
               child: TextField(
-                  controller: controllers[0],
                   onChanged: (value) {
                     freightList[widget.name].num = value;
                   },
