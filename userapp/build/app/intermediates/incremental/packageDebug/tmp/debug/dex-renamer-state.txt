@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-#Fri Jun 09 20:31:36 KST 2023
+#Fri Jun 09 20:45:54 KST 2023
 base.2=C\:\\Users\\user\\QuickLogi\\userapp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
-=======
-#Fri Jun 09 17:33:07 KST 2023
-base.2=C\:\\flutterapp\\quick_logi\\userapp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
->>>>>>> upstream/master
 path.2=classes3.dex
 base.1=C\:\\Users\\user\\QuickLogi\\userapp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
 path.1=classes2.dex
