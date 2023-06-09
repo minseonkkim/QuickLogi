@@ -139,7 +139,7 @@ class _FreightSelectScreenState extends State<FreightSelectScreen> {
                     '${freightList[0].item} (${freightList[0].type}) ${freightList[0].width}${freightList[0].unit} X ${freightList[0].length}${freightList[0].unit} X ${freightList[0].num}${freightList[0].unit} ${freightList[0].num}개';
                 for (int i = 1; i < freightList.length; i++) {
                   res +=
-                      '\n${freightList[i].item} (${freightList[i].type}) ${freightList[i].width}${freightList[i].unit} X ${freightList[i].length}${freightList[i].unit} X ${freightList[i].num}${freightList[0].unit} ${freightList[i].num}개';
+                      '\n${freightList[i].item} (${freightList[i].type}) ${freightList[i].width}${freightList[i].unit} X ${freightList[i].length}${freightList[i].unit} X ${freightList[i].num}${freightList[i].unit} ${freightList[i].num}개';
                 }
                 Get.back(result: res);
               } else {
