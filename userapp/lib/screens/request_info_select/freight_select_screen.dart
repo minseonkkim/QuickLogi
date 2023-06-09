@@ -27,11 +27,6 @@ class FreightInfo {
 }
 
 int freightIndex = 1;
-// final List<FreightInfoForm> freightList = <FreightInfoForm>[
-//   FreightInfoForm(
-//     name: freightIndex,
-//   )
-// ];
 
 final List<FreightInfo> freightList = <FreightInfo>[
   FreightInfo(

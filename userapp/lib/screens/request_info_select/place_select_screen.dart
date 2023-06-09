@@ -6,8 +6,24 @@ import 'package:quick_logi/utilities/components.dart';
 import 'package:quick_logi/utilities/constants.dart';
 
 class PlaceSelectScreen extends StatefulWidget {
-  final List<String> startlist = ['군산', '목포', '부산'];
-  final List<String> endlist = ['부산', '포항'];
+  final List<String> startlist = [
+    '군산(KRKUV)',
+    '목포(KRMOK)',
+    '부산(KRPUS)',
+    '포항(KRKPO)',
+    'Ohshima, Fukuoka(JPOSS)',
+    'Nagoya, Oita(JPNGY)',
+    'Penglai(CNPLA)'
+  ];
+  final List<String> endlist = [
+    '군산(KRKUV)',
+    '목포(KRMOK)',
+    '부산(KRPUS)',
+    '포항(KRKPO)',
+    'Ohshima, Fukuoka(JPOSS)',
+    'Nagoya, Oita(JPNGY)',
+    'Penglai(CNPLA)'
+  ];
 
   @override
   State<PlaceSelectScreen> createState() => _PlaceSelectScreenState();

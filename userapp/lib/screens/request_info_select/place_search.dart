@@ -73,7 +73,14 @@ class StartSearch extends SearchDelegate {
   final List<String> listExample;
   StartSearch(this.listExample);
 
-  List<String> recentList = ["부산", "포항"];
+  List<String> recentList = [
+    '부산(KRPUS)',
+    'Penglai(CNPLA)',
+    '포항(KRKPO)',
+    '목포(KRMOK)',
+    'Nagoya, Oita(JPNGY)',
+    '군산(KRKUV)',
+  ];
 
   @override
   Widget buildSuggestions(BuildContext context) {
@@ -143,7 +150,14 @@ class EndSearch extends SearchDelegate {
   final List<String> listExample;
   EndSearch(this.listExample);
 
-  List<String> recentList = ["부산", "포항"];
+  List<String> recentList = [
+    '부산(KRPUS)',
+    'Penglai(CNPLA)',
+    '포항(KRKPO)',
+    '목포(KRMOK)',
+    'Nagoya, Oita(JPNGY)',
+    '군산(KRKUV)',
+  ];
 
   @override
   Widget buildSuggestions(BuildContext context) {
