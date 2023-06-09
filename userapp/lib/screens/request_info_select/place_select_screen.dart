@@ -6,23 +6,18 @@ import 'package:quick_logi/utilities/components.dart';
 import 'package:quick_logi/utilities/constants.dart';
 
 class PlaceSelectScreen extends StatefulWidget {
-  final List<String> startlist = [
+  final List<String> harborList = [
     '군산(KRKUV)',
     '목포(KRMOK)',
     '부산(KRPUS)',
     '포항(KRKPO)',
     'Ohshima, Fukuoka(JPOSS)',
     'Nagoya, Oita(JPNGY)',
-    'Penglai(CNPLA)'
-  ];
-  final List<String> endlist = [
-    '군산(KRKUV)',
-    '목포(KRMOK)',
-    '부산(KRPUS)',
-    '포항(KRKPO)',
-    'Ohshima, Fukuoka(JPOSS)',
-    'Nagoya, Oita(JPNGY)',
-    'Penglai(CNPLA)'
+    'Penglai(CNPLA)',
+    'Orcadas(AQORC)',
+    'Ooigem(BEOOG)',
+    'Ohbe, Kagawa(JPOBX)',
+    'Ohama, Tottori(JPOMX)'
   ];
 
   @override
@@ -87,7 +82,7 @@ class _PlaceSelectScreenState extends State<PlaceSelectScreen> {
                 onTap: () async {
                   _startPlace = await showSearch(
                       context: context,
-                      delegate: StartSearch(widget.startlist));
+                      delegate: StartSearch(widget.harborList));
                   setState(() {});
                 },
                 child: Container(
@@ -118,7 +113,7 @@ class _PlaceSelectScreenState extends State<PlaceSelectScreen> {
               GestureDetector(
                 onTap: () async {
                   _endPlace = await showSearch(
-                      context: context, delegate: EndSearch(widget.endlist));
+                      context: context, delegate: EndSearch(widget.harborList));
 
                   setState(() {});
                 },
